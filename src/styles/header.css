@@ -1,0 +1,65 @@
+@font-face{
+  font-family: 'ThickFont';
+  src: url(Coolvetica2.otf);
+}
+
+.header-wrap {
+  height: 150px;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /*border-bottom: 1px solid darkgray;*/
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link-wrap {
+  display: inline-block;
+  display: flex;
+}
+
+.link-wrap a {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1em;
+  font-family: 'ThickFont';
+  text-rendering: geometricPrecision;
+}
+
+.link-wrap a:first-child {
+  color: royalblue;
+}
+
+.link-wrap a:first-child::before {
+  content: '01';
+  margin-right: 10px;
+  font-size: 1em;
+  color: #dcdcdc
+}
+
+.link-wrap a:nth-child(2)::before {
+  content: '02';
+  margin-right: 10px;
+  font-size: 1em;
+  color: #dcdcdc
+}
+
+.link-wrap a:nth-child(3)::before {
+  content: '03';
+  margin-right: 10px;
+  font-size: 1em;
+  color: #dcdcdc
+}
+
+.link-wrap a:nth-child(4)::before {
+  content: '04';
+  margin-right: 10px;
+  font-size: 1em;
+  color: #dcdcdc
+}
+
+.link-wrap a:last-child {
+  padding-right: 30px;
+}

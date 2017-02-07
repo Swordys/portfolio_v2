@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from './Header.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <div className="main-wrap">
-        <h2>Yoo</h2>
+        <Header />
       </div>
     );
   }
