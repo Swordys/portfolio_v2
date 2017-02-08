@@ -28,6 +28,21 @@
   align-items: center;
   flex-grow: 1;
   perspective: 5000px;
+  background: white;
+  transition: flex-grow 0.3s ease-out;
+}
+
+.link-component:hover {
+  flex-grow: 2;
+}
+
+.link-component::before {
+  content: "+";
+  align-self: flex-end;
+  font-size: 2vh;
+  font-family: sans-serif;
+  margin: 10px;
+  transition: all 0.3s ease-out;
 }
 
 .link-component:first-child {
@@ -35,14 +50,14 @@
   transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
-  animation: compoAnimo 0.4s ease-out forwards;
+  animation: compoAnimo 300ms ease-out forwards;
 }
 
 .link-component:nth-child(2) {
   transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
-  animation: compoAnimo 0.4s ease-out forwards;
+  animation: compoAnimo 300ms ease-out forwards;
   animation-delay: 80ms;
 }
 
@@ -50,7 +65,7 @@
   transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
-  animation: compoAnimo 0.4s ease-out forwards;
+  animation: compoAnimo 300ms ease-out forwards;
   animation-delay: 160ms;
 }
 
@@ -58,7 +73,7 @@
   transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
-  animation: compoAnimo 0.4s ease-out forwards;
+  animation: compoAnimo 300ms ease-out forwards;
   animation-delay: 240ms;
 }
 
@@ -71,13 +86,13 @@
 }
 
 .link-component a {
-  padding: 15px;
+  padding: 20px;
   text-decoration: none;
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  text-rendering: geometricPrecision;
-  margin-top: -1%;
+  margin-top: -1vh;
+  transition: color 0.3s ease-out;
 }
 
 .link-component:first-child a {
@@ -85,25 +100,11 @@
   transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
-  transition: 0.3s ease-out;
   animation-delay: 250ms;
 }
 
 .link-component:first-child a:hover {
-  opacity: 0;
-}
-
-.link-component:first-child a:hover::after {
-  opacity: 1;
-}
-
-.link-component:first-child a::after {
-  content: 'about';
-  color: royalblue;
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  transform: translateX(-100%);
+  color: dodgerblue;
 }
 
 .link-component:nth-child(2) a {
@@ -112,24 +113,10 @@
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
   animation-delay: 350ms;
-  transition: 0.3s ease-out;
 }
 
 .link-component:nth-child(2) a:hover {
-  opacity: 0;
-}
-
-.link-component:nth-child(2) a:hover::after {
-  opacity: 1;
-}
-
-.link-component:nth-child(2) a::after {
-  content: 'projects';
-  color: royalblue;
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  transform: translateX(-100%);
+  color: dodgerblue;
 }
 
 .link-component:nth-child(3) a {
@@ -137,25 +124,11 @@
   transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
-  animation-delay: 400ms;
-  transition: 0.3s ease-out;
+  animation-delay: 450ms;
 }
 
 .link-component:nth-child(3) a:hover {
-  opacity: 0;
-}
-
-.link-component:nth-child(3) a:hover::after {
-  opacity: 1;
-}
-
-.link-component:nth-child(3) a::after {
-  content: 'skills';
-  color: royalblue;
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  transform: translateX(-100%);
+  color: dodgerblue;
 }
 
 .link-component:last-child a {
@@ -163,25 +136,11 @@
   transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
-  animation-delay: 450ms;
-  transition: 0.3s ease-out;
+  animation-delay: 550ms;
 }
 
 .link-component:last-child a:hover {
-  opacity: 0;
-}
-
-.link-component:last-child a:hover::after {
-  opacity: 1;
-}
-
-.link-component:last-child a::after {
-  content: 'contact';
-  color: royalblue;
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  transform: translateX(-100%);
+  color: dodgerblue;
 }
 
 @keyframes animo {
