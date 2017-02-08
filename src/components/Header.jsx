@@ -10,6 +10,7 @@ class Header extends React.Component {
       skills: 'skills',
       contact: 'contact',
       enter: false,
+      linkWrap: '',
       hideClassAbout: '',
       hideClassProjects: '',
       hideClassSkills: '',
@@ -67,6 +68,7 @@ class Header extends React.Component {
       hideClassAbout: hideClass,
       hideClassProjects: hideClass,
       hideClassSkills: 'activeSkills',
+      linkWrap: 'reverseFlex',
     }) : hideClass;
 
     value === 'contact' ? this.setState({
@@ -74,11 +76,12 @@ class Header extends React.Component {
       hideClassAbout: hideClass,
       hideClassProjects: hideClass,
       hideClassContact: 'activeContact',
+      linkWrap: 'reverseFlex',
     }) : hideClass;
   }
 
   render() {
-    const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact} = this.state;
+    const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact, linkWrap} = this.state;
     let style = {};
     if (this.state.enter) {
       style = {
@@ -93,7 +96,7 @@ class Header extends React.Component {
 
     return (
       <div className="header-wrap">
-        <div className="link-wrap">
+        <div className={`link-wrap ${linkWrap}`}>
           <div className={`link-component ${hideClassAbout}`} id="about" onMouseEnter={this.handleWordGlitch}>
             <a style={style} id="about" onClick={this.handleToggle} href="#">{this.state.about}</a>
           </div>
