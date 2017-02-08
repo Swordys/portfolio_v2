@@ -1,13 +1,21 @@
 import React from 'react';
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className="header-wrap">
       <div className="link-wrap">
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">Contact</a>
+        <div className="link-component">
+          <a href="#">about</a>
+        </div>
+        <div className="link-component">
+          <a href="#">projects</a>
+        </div>
+        <div className="link-component">
+          <a href="#">skills</a>
+        </div>
+        <div className="link-component">
+          <a href="#">contact</a>
+        </div>
       </div>
     </div>
   );
