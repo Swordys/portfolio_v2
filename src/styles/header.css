@@ -20,17 +20,28 @@
   height: 100%;
   flex-direction: column;
   perspective: 1000em;
+  overflow: hidden;
 }
 
 .link-component {
-  border-top: 1px solid lightgray;
   display: flex;
   align-items: center;
   flex-grow: 1;
   perspective: 5000px;
-  background: white;
-  transition: flex-grow 0.3s ease-out;
+  background: #FDFDFD;
+  transition: all 0.3s ease-out;
+  border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
 }
+
+.hide-component {
+  opacity: 0;
+  transform: translate3d(-100vw, 0, 0);
+  border-bottom: none;
+  pointer-events: none;
+  flex-grow: 0;
+}
+
 
 .link-component:hover {
   flex-grow: 2;
@@ -46,35 +57,71 @@
 }
 
 .link-component:first-child {
-  border: 0;
-  transform: translate3d(-200px, 0, 0);
-  transform-origin: left;
-  opacity: 0;
-  animation: compoAnimo 300ms ease-out forwards;
+  /*transform: translate3d(-200px, 0, 0);*/
+  /*transform-origin: left;*/
+  /*opacity: 0;*/
+  /*animation: compoAnimo 300ms ease-out forwards;*/
+}
+
+.activeAbout {
+  flex-grow: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.activeAbout:hover {
+  flex-grow: 0;
 }
 
 .link-component:nth-child(2) {
-  transform: translate3d(-200px, 0, 0);
+  /*transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
   animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 80ms;
+  animation-delay: 80ms;*/
+}
+
+.activeProjects {
+  flex-grow: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.activeProjects:hover {
+  flex-grow: 0;
 }
 
 .link-component:nth-child(3) {
-  transform: translate3d(-200px, 0, 0);
+  /*transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
   animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 160ms;
+  animation-delay: 160ms;*/
+}
+
+.activeSkills {
+  flex-grow: 0;
+  transform: translate3d(0, -200%, 0);
+}
+
+.activeSkills:hover {
+  flex-grow: 0;
 }
 
 .link-component:last-child {
-  transform: translate3d(-200px, 0, 0);
+  /*transform: translate3d(-200px, 0, 0);
   transform-origin: left;
   opacity: 0;
   animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 240ms;
+  animation-delay: 240ms;*/
+  border: 0;
+}
+
+.activeContact {
+  flex-grow: 0;
+  transform: translate3d(0, -300%, 0);
+}
+
+.activeContact:hover {
+  flex-grow: 0;
 }
 
 @keyframes compoAnimo {
@@ -91,8 +138,7 @@
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  margin-top: -1vh;
-  transition: color 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .link-component:first-child a {
