@@ -47,9 +47,9 @@
   flex-grow: 0;
 }
 
-.link-component:hover {
+/*.link-component:hover {
   flex-grow: 2;
-}
+}*/
 
 .link-component::before {
   content: "+";

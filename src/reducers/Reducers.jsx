@@ -1,3 +1,13 @@
+export const currentLoactionReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'CURRENT_LOCATION_SUCCESS':
+      return action.location;
+    default:
+      return state;
+  }
+};
+
+
 export const aboutReducer = (state = false, action) => {
   switch (action.type) {
     case 'TOGGLE_ABOUT':

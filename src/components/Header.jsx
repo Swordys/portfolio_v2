@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions.jsx';
 import glitchIt from '../constants/textGlitch.jsx';
@@ -23,10 +24,79 @@ class Header extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
+  componentWillMount() {
+    const hideClass = 'hide-component';
+    const {
+      locationState,
+      toggleAbout,
+      toggleProject,
+      toggleSkills,
+      toggleContact,
+    } = this.props;
+
+    if (locationState === '/about') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassProjects: hideClass,
+        hideClassSkills: hideClass,
+        hideClassAbout: 'activeAbout',
+        enter: true,
+      });
+      toggleAbout(true);
+      toggleProject(false);
+      toggleSkills(false);
+      toggleContact(false);
+    }
+
+    if (locationState === '/projects') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassAbout: hideClass,
+        hideClassSkills: hideClass,
+        hideClassProjects: 'activeProjects',
+        enter: true,
+      });
+      toggleProject(true);
+      toggleSkills(false);
+      toggleContact(false);
+      toggleAbout(false);
+    }
+
+    if (locationState === '/skills') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassAbout: hideClass,
+        hideClassProjects: hideClass,
+        hideClassSkills: 'activeSkills',
+        linkWrap: 'reverseFlex',
+        enter: true,
+      });
+      toggleSkills(true);
+      toggleContact(false);
+      toggleAbout(false);
+      toggleProject(false);
+    }
+
+    if (locationState === '/contact') {
+      this.setState({
+        hideClassSkills: hideClass,
+        hideClassAbout: hideClass,
+        hideClassProjects: hideClass,
+        hideClassContact: 'activeContact',
+        linkWrap: 'reverseFlex',
+        enter: true,
+      });
+      toggleContact(true);
+      toggleAbout(false);
+      toggleProject(false);
+      toggleSkills(false);
+    }
+  }
+
   handleWordGlitch(e) {
     const value = e.target.id;
     const words = glitchIt(value);
-    this.glitchDaText(words, 100, value);
+    this.glitchDaText(words, 120, value);
   }
 
   glitchDaText(retWords, speed, value) {
@@ -45,12 +115,13 @@ class Header extends React.Component {
 
   handleToggle(e) {
     const value = e.target.id;
+    Actions.currentLocationState(value);
     const hideClass = 'hide-component';
     const {
       toggleAbout,
       toggleProject,
       toggleSkills,
-      toggleContact
+      toggleContact,
     } = this.props;
 
     this.setState({
@@ -119,16 +190,16 @@ class Header extends React.Component {
       <div className="header-wrap">
         <div className={`link-wrap ${linkWrap}`}>
           <div className={`link-component ${hideClassAbout}`} id="about" onMouseEnter={this.handleWordGlitch}>
-            <a style={style} id="about" onClick={this.handleToggle} href="#">{this.state.about}</a>
+            <Link style={style} id="about" onClick={this.handleToggle} to="about" href="#">{this.state.about}</Link>
           </div>
           <div className={`link-component ${hideClassProjects}`} id="projects" onMouseEnter={this.handleWordGlitch}>
-            <a style={style} id="projects" onClick={this.handleToggle} href="#">{this.state.projects}</a>
+            <Link style={style} id="projects" onClick={this.handleToggle} to="projects" href="#">{this.state.projects}</Link>
           </div>
           <div className={`link-component ${hideClassSkills}`} id="skills" onMouseEnter={this.handleWordGlitch}>
-            <a style={style} id="skills" onClick={this.handleToggle} href="#">{this.state.skills}</a>
+            <Link style={style} id="skills" onClick={this.handleToggle} to="skills" href="#">{this.state.skills}</Link>
           </div>
           <div className={`link-component ${hideClassContact}`} id="contact" onMouseEnter={this.handleWordGlitch}>
-            <a style={style} id="contact" onClick={this.handleToggle} href="#">{this.state.contact}</a>
+            <Link style={style} id="contact" onClick={this.handleToggle} to="contact" href="#">{this.state.contact}</Link>
           </div>
         </div>
       </div>
@@ -142,10 +213,12 @@ Header.propTypes = {
   toggleProject: PropTypes.func,
   toggleSkills: PropTypes.func,
   toggleContact: PropTypes.func,
+  locationState: PropTypes.string,
 };
 
-const mapStateToProps = state => ({
-  aboutState: state.aboutState,
+const mapStateToProps = (state) => ({
+  locationState: state.locationState,
+  routes: state.routing
 });
 
 const mapDispatchToProps = dispatch => ({

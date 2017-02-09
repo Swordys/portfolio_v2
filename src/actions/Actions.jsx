@@ -1,3 +1,8 @@
+export const currentLocationState = (location) => ({
+  type: 'CURRENT_LOCATION_SUCCESS',
+  location,
+});
+
 export const toggleAbout = (value) => ({
   type: 'TOGGLE_ABOUT',
   value

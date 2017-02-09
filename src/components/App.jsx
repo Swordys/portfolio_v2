@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header.jsx';
+import { connect } from 'react-redux';
 import AboutContent from './AboutContent.jsx';
 import ProjectContent from './ProjectContent.jsx';
 import SkillsContent from './SkillsContent.jsx';
@@ -19,4 +20,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+export default connect()(App);
