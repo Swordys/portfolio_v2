@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import * as Actions from '../actions/Actions.jsx';
 import glitchIt from '../constants/textGlitch.jsx';
 
 class Header extends React.Component {
@@ -44,40 +46,59 @@ class Header extends React.Component {
   handleToggle(e) {
     const value = e.target.id;
     const hideClass = 'hide-component';
+    const {
+      toggleAbout,
+      toggleProject,
+      toggleSkills,
+      toggleContact
+    } = this.props;
 
     this.setState({
       enter: true,
     });
 
-    value === 'about' ? this.setState({
-      hideClassContact: hideClass,
-      hideClassProjects: hideClass,
-      hideClassSkills: hideClass,
-      hideClassAbout: 'activeAbout',
-    }) : hideClass;
+    if (value === 'about') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassProjects: hideClass,
+        hideClassSkills: hideClass,
+        hideClassAbout: 'activeAbout',
+      });
+      toggleAbout(true);
+    }
 
-    value === 'projects' ? this.setState({
-      hideClassContact: hideClass,
-      hideClassAbout: hideClass,
-      hideClassSkills: hideClass,
-      hideClassProjects: 'activeProjects',
-    }) : hideClass;
+    if (value === 'projects') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassAbout: hideClass,
+        hideClassSkills: hideClass,
+        hideClassProjects: 'activeProjects',
+      });
+      toggleProject(true);
+    }
 
-    value === 'skills' ? this.setState({
-      hideClassContact: hideClass,
-      hideClassAbout: hideClass,
-      hideClassProjects: hideClass,
-      hideClassSkills: 'activeSkills',
-      linkWrap: 'reverseFlex',
-    }) : hideClass;
+    if (value === 'skills') {
+      this.setState({
+        hideClassContact: hideClass,
+        hideClassAbout: hideClass,
+        hideClassProjects: hideClass,
+        hideClassSkills: 'activeSkills',
+        linkWrap: 'reverseFlex',
+      });
+      toggleSkills(true);
+    }
 
-    value === 'contact' ? this.setState({
-      hideClassSkills: hideClass,
-      hideClassAbout: hideClass,
-      hideClassProjects: hideClass,
-      hideClassContact: 'activeContact',
-      linkWrap: 'reverseFlex',
-    }) : hideClass;
+    if (value === 'contact') {
+      this.setState({
+        hideClassSkills: hideClass,
+        hideClassAbout: hideClass,
+        hideClassProjects: hideClass,
+        hideClassContact: 'activeContact',
+        linkWrap: 'reverseFlex',
+      });
+      toggleContact(true);
+    }
+
   }
 
   render() {
@@ -90,7 +111,7 @@ class Header extends React.Component {
         fontSize: '5vh',
         transformOrigin: 'left',
         opacity: 1,
-        transitionDelay: '200ms',
+        transitionDelay: '100ms',
       };
     }
 
@@ -115,4 +136,31 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+
+Header.propTypes = {
+  toggleAbout: PropTypes.func,
+  toggleProject: PropTypes.func,
+  toggleSkills: PropTypes.func,
+  toggleContact: PropTypes.func,
+};
+
+const mapStateToProps = state => ({
+  aboutState: state.aboutState,
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleAbout: (value) => {
+    dispatch(Actions.toggleAbout(value));
+  },
+  toggleProject: (value) => {
+    dispatch(Actions.toggleProject(value));
+  },
+  toggleSkills: (value) => {
+    dispatch(Actions.toggleSkills(value));
+  },
+  toggleContact: (value) => {
+    dispatch(Actions.toggleContact(value));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

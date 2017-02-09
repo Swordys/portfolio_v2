@@ -34,7 +34,7 @@
   flex-grow: 1;
   perspective: 5000px;
   background: #FDFDFD;
-  transition: all 0.4s cubic-bezier(.86, .28, .18, .85);
+  transition: all 0.3s cubic-bezier(.86, .28, .18, .85);
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
 }

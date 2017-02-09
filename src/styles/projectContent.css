@@ -1,11 +1,11 @@
-.about-content {
+.project-content {
   width: 100%;
   height: 100vh;
   position: absolute;
   font-family: 'ThickFont';
   top: 0;
   left: 0;
-  background: pink;
+  background: hotpink;
   display: flex;
   justify-content: center;
   align-items: center;
