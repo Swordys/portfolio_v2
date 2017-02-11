@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import {styles} from '../styles/contactContent.css'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 
 class ContactContent extends React.Component {

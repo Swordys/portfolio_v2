@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions.jsx';
 import glitchIt from '../constants/textGlitch.jsx';
+import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-vars
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -24,6 +26,7 @@ class Header extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
+
   componentWillMount() {
     const hideClass = 'hide-component';
     const {
@@ -33,6 +36,7 @@ class Header extends React.Component {
       toggleSkills,
       toggleContact,
     } = this.props;
+
 
     if (locationState === '/about') {
       this.setState({
@@ -178,13 +182,13 @@ class Header extends React.Component {
     if (this.state.enter) {
       style = {
         animation: 'none',
-        transform: 'scale(1)',
-        fontSize: '5vh',
+        transform: 'scale(0.5)',
         transformOrigin: 'left',
         opacity: 1,
-        transitionDelay: '100ms',
+        // transitionDelay: '100ms',
       };
     }
+
 
     return (
       <div className="header-wrap">

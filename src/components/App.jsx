@@ -5,6 +5,7 @@ import AboutContent from './AboutContent.jsx';
 import ProjectContent from './ProjectContent.jsx';
 import SkillsContent from './SkillsContent.jsx';
 import ContactContent from './ContactContent.jsx';
+import {styles} from '../styles/mainWrap.css'; // eslint-disable-line no-unused-vars
 
 class App extends React.Component {
   render() {

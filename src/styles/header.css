@@ -31,21 +31,23 @@
 .link-component {
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  height: 100%;
   perspective: 5000px;
   background: #FDFDFD;
-  transition: all 0.3s cubic-bezier(.86, .28, .18, .85);
+  transition: all 0.3s ease-out;
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
+  /*min-height: 200px;*/
 }
 
 .hide-component {
   opacity: 0;
-  transform: translate3d(-100vw, 0, 0);
-  border-bottom: none;
+  transform: translate3d(-100px, 0, 0);
+  /*border-bottom: none;*/
   pointer-events: none;
-  flex-grow: 0;
+  /*flex-grow: 0;*/
 }
+
 
 /*.link-component:hover {
   flex-grow: 2;
@@ -69,7 +71,7 @@
 
 .activeAbout {
   flex-grow: 0;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0, 0);
 }
 
 .activeAbout:hover {
@@ -86,7 +88,7 @@
 
 .activeProjects {
   flex-grow: 0;
-  transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0) translateZ(0);
 }
 
 .activeProjects:hover {
@@ -145,12 +147,17 @@
   transition: all 0.3s ease-out;
 }
 
+#projects{
+  /*transform: scale(0.8);*/
+}
+
 .link-component:first-child a {
   opacity: 0;
   transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
   animation-delay: 250ms;
+  /*transform: scale(1.2);*/
 }
 
 .link-component:first-child a:hover {
