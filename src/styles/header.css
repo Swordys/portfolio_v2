@@ -34,18 +34,18 @@
   height: 100%;
   perspective: 5000px;
   background: #FDFDFD;
-  transition: all 0.3s ease-out;
+  transition: all 450ms ease-in-out;
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
-  /*min-height: 200px;*/
+  position: relative;
+  z-index: 3;
+  transform-origin: top left;
 }
 
 .hide-component {
   opacity: 0;
   transform: translate3d(-100px, 0, 0);
-  /*border-bottom: none;*/
   pointer-events: none;
-  /*flex-grow: 0;*/
 }
 
 
@@ -70,12 +70,20 @@
 }
 
 .activeAbout {
-  flex-grow: 0;
-  transform: translate3d(0, 0, 0, 0);
+  transform: scale(0.5);
+  transform-origin: top left;
 }
 
-.activeAbout:hover {
-  flex-grow: 0;
+.activeAbout::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #FDFDFD;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: -1;
 }
 
 .link-component:nth-child(2) {
@@ -87,12 +95,20 @@
 }
 
 .activeProjects {
-  flex-grow: 0;
-  transform: translate3d(0, -100%, 0) translateZ(0);
+  transform: scale(0.5) translateY(-201%);
+  transform-origin: left top;
 }
 
-.activeProjects:hover {
-  flex-grow: 0;
+.activeProjects::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #FDFDFD;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: -1;
 }
 
 .link-component:nth-child(3) {
@@ -104,12 +120,20 @@
 }
 
 .activeSkills {
-  flex-grow: 0;
-  transform: translate3d(0, 100%, 0);
+  transform: scale(0.5) translate3d(0, 200%, 0);
+  transform-origin: bottom left;
 }
 
-.activeSkills:hover {
-  flex-grow: 0;
+.activeSkills::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #FDFDFD;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: -1;
 }
 
 .link-component:last-child {
@@ -122,12 +146,20 @@
 }
 
 .activeContact {
-  flex-grow: 0;
-  transform: translate3d(0, 0, 0);
+  transform: scale(0.5);
+  transform-origin: bottom left;
 }
 
-.activeContact:hover {
-  flex-grow: 0;
+.activeContact::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #FDFDFD;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: -1;
 }
 
 @keyframes compoAnimo {
@@ -147,8 +179,8 @@
   transition: all 0.3s ease-out;
 }
 
-#projects{
-  /*transform: scale(0.8);*/
+#projects {
+  /*transform: scaleY(0.8);*/
 }
 
 .link-component:first-child a {

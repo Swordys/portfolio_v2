@@ -1,9 +1,9 @@
+import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-vars
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions.jsx';
 import glitchIt from '../constants/textGlitch.jsx';
-import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-vars
 
 
 class Header extends React.Component {
@@ -14,7 +14,6 @@ class Header extends React.Component {
       projects: 'projects',
       skills: 'skills',
       contact: 'contact',
-      enter: false,
       linkWrap: '',
       hideClassAbout: '',
       hideClassProjects: '',
@@ -128,10 +127,6 @@ class Header extends React.Component {
       toggleContact,
     } = this.props;
 
-    this.setState({
-      enter: true,
-    });
-
     if (value === 'about') {
       this.setState({
         hideClassContact: hideClass,
@@ -178,32 +173,50 @@ class Header extends React.Component {
 
   render() {
     const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact, linkWrap} = this.state;
-    let style = {};
-    if (this.state.enter) {
-      style = {
-        animation: 'none',
-        transform: 'scale(0.5)',
-        transformOrigin: 'left',
-        opacity: 1,
-        // transitionDelay: '100ms',
-      };
-    }
-
-
     return (
       <div className="header-wrap">
         <div className={`link-wrap ${linkWrap}`}>
-          <div className={`link-component ${hideClassAbout}`} id="about" onMouseEnter={this.handleWordGlitch}>
-            <Link style={style} id="about" onClick={this.handleToggle} to="about" href="#">{this.state.about}</Link>
+          <div
+            className={`link-component ${hideClassAbout}`}
+            id="about"
+            onMouseEnter={this.handleWordGlitch}>
+            <Link
+              id="about"
+              onClick={this.handleToggle}
+              to="about"
+              href="#">{this.state.about}</Link>
           </div>
-          <div className={`link-component ${hideClassProjects}`} id="projects" onMouseEnter={this.handleWordGlitch}>
-            <Link style={style} id="projects" onClick={this.handleToggle} to="projects" href="#">{this.state.projects}</Link>
+          <div
+            className={`link-component ${hideClassProjects}`}
+            id="projects"
+            onMouseEnter={this.handleWordGlitch}>
+            <Link
+              id="projects"
+              onClick={this.handleToggle}
+              to="projects"
+              href="#">{this.state.projects}</Link>
           </div>
-          <div className={`link-component ${hideClassSkills}`} id="skills" onMouseEnter={this.handleWordGlitch}>
-            <Link style={style} id="skills" onClick={this.handleToggle} to="skills" href="#">{this.state.skills}</Link>
+          <div
+            className={`link-component ${hideClassSkills}`}
+            style={{ transformOrigin: 'bottom left' }}
+            id="skills"
+            onMouseEnter={this.handleWordGlitch}>
+            <Link
+              id="skills"
+              onClick={this.handleToggle}
+              to="skills"
+              href="#">{this.state.skills}</Link>
           </div>
-          <div className={`link-component ${hideClassContact}`} id="contact" onMouseEnter={this.handleWordGlitch}>
-            <Link style={style} id="contact" onClick={this.handleToggle} to="contact" href="#">{this.state.contact}</Link>
+          <div
+            className={`link-component ${hideClassContact}`}
+            style={{ transformOrigin: 'bottom left' }}
+            id="contact"
+            onMouseEnter={this.handleWordGlitch}>
+            <Link
+              id="contact"
+              onClick={this.handleToggle}
+              to="contact"
+              href="#">{this.state.contact}</Link>
           </div>
         </div>
       </div>
