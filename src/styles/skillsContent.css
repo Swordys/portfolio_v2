@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   transform: translateY(-25vh);
-  transition: all 600ms cubic-bezier(.86, .28, .18, .85);
+  transition: transform 600ms cubic-bezier(.86, .28, .18, .85);
   opacity: 0;
   pointer-events: none;
 }

@@ -14,6 +14,7 @@ class Header extends React.Component {
       projects: 'projects',
       skills: 'skills',
       contact: 'contact',
+      clicked: false,
       linkWrap: '',
       hideClassAbout: '',
       hideClassProjects: '',
@@ -24,7 +25,6 @@ class Header extends React.Component {
     this.handleWordGlitch = this.handleWordGlitch.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
-
 
   componentWillMount() {
     const hideClass = 'hide-component';
@@ -96,10 +96,13 @@ class Header extends React.Component {
     }
   }
 
+  // TURN OFF FOR MOBILE DEVICES
   handleWordGlitch(e) {
-    const value = e.target.id;
-    const words = glitchIt(value);
-    this.glitchDaText(words, 120, value);
+    if (!this.state.clicked) {
+      const value = e.target.id;
+      const words = glitchIt(value);
+      this.glitchDaText(words, 120, value);
+    }
   }
 
   glitchDaText(retWords, speed, value) {
@@ -172,51 +175,71 @@ class Header extends React.Component {
   }
 
   render() {
-    const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact, linkWrap} = this.state;
+    let showLogo = '';
+    const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact, linkWrap, clicked} = this.state;
+    if (clicked) {
+      showLogo = 'showLogo';
+    }
     return (
-      <div className="header-wrap">
+      <div className="header-wrap" onClick={() => this.setState({ clicked: true })}>
         <div className={`link-wrap ${linkWrap}`}>
           <div
             className={`link-component ${hideClassAbout}`}
             id="about"
-            onMouseEnter={this.handleWordGlitch}>
+          >
             <Link
               id="about"
               onClick={this.handleToggle}
               to="about"
-              href="#">{this.state.about}</Link>
+              href="#">{this.state.about}
+            </Link>
+            <div className={`logo ${showLogo}`}>
+              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            </div>
           </div>
           <div
             className={`link-component ${hideClassProjects}`}
             id="projects"
-            onMouseEnter={this.handleWordGlitch}>
+          >
             <Link
               id="projects"
               onClick={this.handleToggle}
               to="projects"
-              href="#">{this.state.projects}</Link>
+              href="#">{this.state.projects}
+            </Link>
+            <div className={`logo ${showLogo}`}>
+              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            </div>
           </div>
           <div
             className={`link-component ${hideClassSkills}`}
             style={{ transformOrigin: 'bottom left' }}
             id="skills"
-            onMouseEnter={this.handleWordGlitch}>
+          >
             <Link
               id="skills"
               onClick={this.handleToggle}
               to="skills"
-              href="#">{this.state.skills}</Link>
+              href="#">{this.state.skills}
+            </Link>
+            <div className={`logo ${showLogo}`}>
+              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            </div>
           </div>
           <div
             className={`link-component ${hideClassContact}`}
             style={{ transformOrigin: 'bottom left' }}
             id="contact"
-            onMouseEnter={this.handleWordGlitch}>
+          >
             <Link
               id="contact"
               onClick={this.handleToggle}
               to="contact"
-              href="#">{this.state.contact}</Link>
+              href="#">{this.state.contact}
+            </Link>
+            <div className={`logo ${showLogo}`}>
+              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            </div>
           </div>
         </div>
       </div>

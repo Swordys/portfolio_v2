@@ -34,24 +34,13 @@
   height: 100%;
   perspective: 5000px;
   background: #FDFDFD;
-  transition: all 450ms ease-in-out;
+  transition: all 450ms cubic-bezier(.75, .28, .28, .84);
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
   position: relative;
   z-index: 3;
   transform-origin: top left;
 }
-
-.hide-component {
-  opacity: 0;
-  transform: translate3d(-100px, 0, 0);
-  pointer-events: none;
-}
-
-
-/*.link-component:hover {
-  flex-grow: 2;
-}*/
 
 .link-component::before {
   content: "+";
@@ -61,6 +50,15 @@
   margin: 10px;
   transition: all 0.3s ease-out;
 }
+
+.hide-component {
+  opacity: 0;
+  transform: translate3d(-100px, 0, 0);
+  pointer-events: none;
+}
+
+
+/*ABOUT - TAB*/
 
 .link-component:first-child {
   /*transform: translate3d(-200px, 0, 0);*/
@@ -85,6 +83,9 @@
   right: -100%;
   z-index: -1;
 }
+
+
+/*PROJECTS - TAB*/
 
 .link-component:nth-child(2) {
   /*transform: translate3d(-200px, 0, 0);
@@ -111,6 +112,9 @@
   z-index: -1;
 }
 
+
+/*SKILLS - TAB*/
+
 .link-component:nth-child(3) {
   /*transform: translate3d(-200px, 0, 0);
   transform-origin: left;
@@ -135,6 +139,9 @@
   right: -100%;
   z-index: -1;
 }
+
+
+/*CONTACT - TAB*/
 
 .link-component:last-child {
   /*transform: translate3d(-200px, 0, 0);
@@ -170,18 +177,25 @@
   }
 }
 
+
+/*----------MENU - TEXT---------*/
+
 .link-component a {
-  padding: 20px;
+  padding: 25px;
   text-decoration: none;
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  transition: all 0.3s ease-out;
+  transition: color 300ms ease-out;
+  background: #FDFDFD;
 }
 
-#projects {
-  /*transform: scaleY(0.8);*/
+.link-component a:hover {
+  color: dodgerblue;
 }
+
+
+/*ABOUT*/
 
 .link-component:first-child a {
   opacity: 0;
@@ -189,54 +203,8 @@
   transform-style: preserve-3d;
   animation: animo 350ms ease-out forwards;
   animation-delay: 250ms;
-  /*transform: scale(1.2);*/
-}
-
-.link-component:first-child a:hover {
-  color: dodgerblue;
-}
-
-.link-component:nth-child(2) a {
-  opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
-  transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
-  animation-delay: 350ms;
-}
-
-.link-component:nth-child(2) a:hover {
-  color: dodgerblue;
-}
-
-.link-component:nth-child(3) a {
-  opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
-  transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
-  animation-delay: 450ms;
-}
-
-.link-component:nth-child(3) a:hover {
-  color: dodgerblue;
-}
-
-.link-component:last-child a {
-  opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
-  transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
-  animation-delay: 550ms;
-}
-
-.link-component:last-child a:hover {
-  color: dodgerblue;
-}
-
-@keyframes animo {
-  100% {
-    transform: translateY(0) rotate3d(1, 0, 0, 0);
-    opacity: 1;
-  }
+  position: relative;
+  z-index: 2;
 }
 
 .link-component:first-child a::before {
@@ -246,11 +214,57 @@
   color: #dcdcdc;
 }
 
+.logo {
+  height: 10vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 0;
+  opacity: 0;
+  margin-right: calc(5vw + 30px);
+  transform: translate3d(105vw, -50%, 0) rotate(25deg);
+  transform-origin: right;
+  transition: all 400ms cubic-bezier(.33, .93, .53, 1.31);
+  transition-delay: 300ms;
+}
+
+.logo-main {
+  height: 100%;
+  width: auto;
+}
+
+.showLogo {
+  opacity: 1;
+  transform: translate3d(100vw, -50%, 0);
+}
+
+
+/*PROJECTS*/
+
+.link-component:nth-child(2) a {
+  opacity: 0;
+  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform-style: preserve-3d;
+  animation: animo 350ms ease-out forwards;
+  animation-delay: 350ms;
+}
+
 .link-component:nth-child(2) a::before {
   content: '02';
   margin: 0 0.3em 0 0.3em;
   font-size: 1em;
   color: #dcdcdc
+}
+
+
+/*SKILLS*/
+
+.link-component:nth-child(3) a {
+  opacity: 0;
+  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform-style: preserve-3d;
+  animation: animo 350ms ease-out forwards;
+  animation-delay: 450ms;
 }
 
 .link-component:nth-child(3) a::before {
@@ -260,13 +274,27 @@
   color: #dcdcdc
 }
 
-.link-component:nth-child(4) a::before {
+
+/*CONTACT*/
+
+.link-component:last-child a {
+  opacity: 0;
+  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform-style: preserve-3d;
+  animation: animo 350ms ease-out forwards;
+  animation-delay: 550ms;
+}
+
+.link-component:last-child a::before {
   content: '04';
   margin: 0 0.3em 0 0.3em;
   font-size: 1em;
   color: #dcdcdc
 }
 
-.link-component:last-child a {
-  padding-right: 30px;
+@keyframes animo {
+  100% {
+    transform: translateY(0) rotate3d(1, 0, 0, 0);
+    opacity: 1;
+  }
 }
