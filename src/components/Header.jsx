@@ -36,6 +36,11 @@ class Header extends React.Component {
       toggleContact,
     } = this.props;
 
+    if (locationState !== '/') {
+      this.setState({
+        clicked: true,
+      });
+    }
 
     if (locationState === '/about') {
       this.setState({
