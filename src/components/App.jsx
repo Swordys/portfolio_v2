@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from './Header.jsx';
 import { connect } from 'react-redux';
+import { styles } from '../styles/mainWrap.css'; // eslint-disable-line no-unused-vars
+import Header from './Header.jsx';
+import Menu from './Menu.jsx';
 import AboutContent from './AboutContent.jsx';
 import ProjectContent from './ProjectContent.jsx';
 import SkillsContent from './SkillsContent.jsx';
 import ContactContent from './ContactContent.jsx';
-import {styles} from '../styles/mainWrap.css'; // eslint-disable-line no-unused-vars
 
 class App extends React.Component {
   render() {
@@ -15,7 +16,10 @@ class App extends React.Component {
         <ProjectContent />
         <SkillsContent />
         <ContactContent />
-        <Header />
+        <div className="main-menu-wrap">
+          <Header />
+          <Menu />
+        </div>
       </div>
     );
   }

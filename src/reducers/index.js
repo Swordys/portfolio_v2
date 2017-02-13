@@ -11,7 +11,8 @@
    projectReducer,
    skillsReducer,
    contactReducer,
-   currentLoactionReducer
+   currentLoactionReducer,
+   toggleSlideMenuReducer
  } from './Reducers.jsx';
 
  export default combineReducers({
@@ -21,4 +22,5 @@
    skillsState: skillsReducer,
    contactState: contactReducer,
    routing: routerReducer,
+   slideState: toggleSlideMenuReducer
  });

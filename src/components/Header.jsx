@@ -181,7 +181,19 @@ class Header extends React.Component {
 
   render() {
     let showLogo = '';
-    const {hideClassAbout, hideClassProjects, hideClassSkills, hideClassContact, linkWrap, clicked} = this.state;
+    let sliderClass = '';
+    const {
+      hideClassAbout,
+      hideClassProjects,
+      hideClassSkills,
+      hideClassContact,
+      linkWrap,
+      clicked,
+    } = this.state;
+    const {sliderState} = this.props;
+    if (sliderState) {
+      sliderClass = 'link-component-visable';
+    }
     if (clicked) {
       showLogo = 'showLogo';
     }
@@ -189,7 +201,7 @@ class Header extends React.Component {
       <div className="header-wrap" onClick={() => this.setState({ clicked: true })}>
         <div className={`link-wrap ${linkWrap}`}>
           <div
-            className={`link-component ${hideClassAbout}`}
+            className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about"
           >
             <Link
@@ -203,7 +215,7 @@ class Header extends React.Component {
             </div>
           </div>
           <div
-            className={`link-component ${hideClassProjects}`}
+            className={`link-component ${hideClassProjects} ${sliderClass}`}
             id="projects"
           >
             <Link
@@ -217,7 +229,7 @@ class Header extends React.Component {
             </div>
           </div>
           <div
-            className={`link-component ${hideClassSkills}`}
+            className={`link-component ${hideClassSkills} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="skills"
           >
@@ -232,7 +244,7 @@ class Header extends React.Component {
             </div>
           </div>
           <div
-            className={`link-component ${hideClassContact}`}
+            className={`link-component ${hideClassContact} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="contact"
           >
@@ -258,11 +270,13 @@ Header.propTypes = {
   toggleProject: PropTypes.func,
   toggleSkills: PropTypes.func,
   toggleContact: PropTypes.func,
+  sliderState: PropTypes.bool,
   locationState: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
   locationState: state.locationState,
+  sliderState: state.slideState,
   routes: state.routing
 });
 

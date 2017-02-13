@@ -1,0 +1,9 @@
+.sideMenu-wrap {
+  height: 5vh;
+  width: 5vh;
+  margin: 50px;
+  background: red;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}

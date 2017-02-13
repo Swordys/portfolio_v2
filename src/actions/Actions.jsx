@@ -3,6 +3,12 @@ export const currentLocationState = (location) => ({
   location,
 });
 
+
+export const toggleSlideMenu = (value) => ({
+  type: 'TOGGLE_SLIDE',
+  value
+});
+
 export const toggleAbout = (value) => ({
   type: 'TOGGLE_ABOUT',
   value
