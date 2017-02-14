@@ -38,7 +38,7 @@
   box-sizing: border-box;
   position: relative;
   z-index: 3;
-  transform: translate3d(-200px, 0, 0);
+  transform: translate3d(-300px, 0, 0);
   transform-origin: left;
   opacity: 0;
 }
@@ -47,6 +47,7 @@
   transform: translate3d(0, 0, 0);
   transform-origin: top left;
   opacity: 1;
+  transition: all 450ms cubic-bezier(.55, .31, 0, .91);
 }
 
 .link-component-visable:first-child {
@@ -68,7 +69,7 @@
 .link-component::before {
   content: "+";
   align-self: flex-end;
-  font-size: 1vw;
+  font-size: 2vh;
   font-family: sans-serif;
   margin: 10px;
   transition: all 0.3s ease-out;
@@ -204,13 +205,15 @@
 /*----------MENU - TEXT---------*/
 
 .link-component a {
-  padding: 25px;
+  padding: 30px 0 30px 0;
   text-decoration: none;
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
   transition: color 300ms ease-out;
-  background: #FDFDFD;
+  /**/
+  animation: animo 350ms ease-out forwards;
+  animation-play-state: paused;
 }
 
 .link-component a:hover {
@@ -247,9 +250,8 @@
 
 .link-component:first-child a {
   opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
   animation-delay: 250ms;
   position: relative;
   z-index: 2;
@@ -257,7 +259,7 @@
 
 .link-component:first-child a::before {
   content: '01';
-  margin: 0 0.3em 0 0.3em;
+  margin: 0 0.3em 0 0.1em;
   font-size: 1em;
   color: #dcdcdc;
 }
@@ -267,15 +269,14 @@
 
 .link-component:nth-child(2) a {
   opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
   animation-delay: 350ms;
 }
 
 .link-component:nth-child(2) a::before {
   content: '02';
-  margin: 0 0.3em 0 0.3em;
+  margin: 0 0.3em 0 0.1em;
   font-size: 1em;
   color: #dcdcdc
 }
@@ -285,15 +286,14 @@
 
 .link-component:nth-child(3) a {
   opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
   animation-delay: 450ms;
 }
 
 .link-component:nth-child(3) a::before {
   content: '03';
-  margin: 0 0.3em 0 0.3em;
+  margin: 0 0.3em 0 0.1em;
   font-size: 1em;
   color: #dcdcdc
 }
@@ -303,15 +303,14 @@
 
 .link-component:last-child a {
   opacity: 0;
-  transform: translateY(-25px) rotate3d(1, 0, 0, 45deg);
+  transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
-  animation: animo 350ms ease-out forwards;
   animation-delay: 550ms;
 }
 
 .link-component:last-child a::before {
   content: '04';
-  margin: 0 0.3em 0 0.3em;
+  margin: 0 0.3em 0 0.1em;
   font-size: 1em;
   color: #dcdcdc
 }

@@ -182,6 +182,7 @@ class Header extends React.Component {
   render() {
     let showLogo = '';
     let sliderClass = '';
+    let animationStart = {};
     const {
       hideClassAbout,
       hideClassProjects,
@@ -190,9 +191,13 @@ class Header extends React.Component {
       linkWrap,
       clicked,
     } = this.state;
+
     const {sliderState} = this.props;
     if (sliderState) {
       sliderClass = 'link-component-visable';
+      animationStart = {
+        animationPlayState: 'running',
+      };
     }
     if (clicked) {
       showLogo = 'showLogo';
@@ -205,10 +210,13 @@ class Header extends React.Component {
             id="about"
           >
             <Link
+              style={animationStart}
               id="about"
               onClick={this.handleToggle}
               to="about"
-              href="#">{this.state.about}
+              href="#"
+            >
+              {this.state.about}
             </Link>
             <div className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
@@ -219,10 +227,13 @@ class Header extends React.Component {
             id="projects"
           >
             <Link
+              style={animationStart}
               id="projects"
               onClick={this.handleToggle}
               to="projects"
-              href="#">{this.state.projects}
+              href="#"
+            >
+              {this.state.projects}
             </Link>
             <div className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
@@ -234,10 +245,13 @@ class Header extends React.Component {
             id="skills"
           >
             <Link
+              style={animationStart}
               id="skills"
               onClick={this.handleToggle}
               to="skills"
-              href="#">{this.state.skills}
+              href="#"
+            >
+              {this.state.skills}
             </Link>
             <div className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
@@ -249,17 +263,20 @@ class Header extends React.Component {
             id="contact"
           >
             <Link
+              style={animationStart}
               id="contact"
               onClick={this.handleToggle}
               to="contact"
-              href="#">{this.state.contact}
+              href="#"
+            >
+              {this.state.contact}
             </Link>
             <div className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
