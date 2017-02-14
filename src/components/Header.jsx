@@ -201,6 +201,9 @@ class Header extends React.Component {
     }
     if (clicked) {
       showLogo = 'showLogo';
+      animationStart = {
+        animationPlayState: 'running',
+      };
     }
     return (
       <div className="header-wrap" onClick={() => this.setState({ clicked: true })}>

@@ -84,16 +84,10 @@
 
 /*ABOUT - TAB*/
 
-.link-component:first-child {
-  /*transform: translate3d(-200px, 0, 0);
-  transform-origin: left;
-  opacity: 0;
-  animation: compoAnimo 300ms ease-out forwards;*/
-}
-
 .activeAbout {
   transform: scale(0.5);
   transform-origin: top left;
+  opacity: 1;
 }
 
 .activeAbout::after {
@@ -111,17 +105,10 @@
 
 /*PROJECTS - TAB*/
 
-.link-component:nth-child(2) {
-  /*transform: translate3d(-200px, 0, 0);
-  transform-origin: left;
-  opacity: 0;
-  animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 80ms;*/
-}
-
 .activeProjects {
   transform: scale(0.5) translateY(-201%);
   transform-origin: left top;
+  opacity: 1;
 }
 
 .activeProjects::after {
@@ -139,17 +126,10 @@
 
 /*SKILLS - TAB*/
 
-.link-component:nth-child(3) {
-  /*transform: translate3d(-200px, 0, 0);
-  transform-origin: left;
-  opacity: 0;
-  animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 160ms;*/
-}
-
 .activeSkills {
   transform: scale(0.5) translate3d(0, 200%, 0);
   transform-origin: bottom left;
+  opacity: 1;
 }
 
 .activeSkills::after {
@@ -167,18 +147,10 @@
 
 /*CONTACT - TAB*/
 
-.link-component:last-child {
-  /*transform: translate3d(-200px, 0, 0);
-  transform-origin: left;
-  opacity: 0;
-  animation: compoAnimo 300ms ease-out forwards;
-  animation-delay: 240ms;*/
-  border: 0;
-}
-
 .activeContact {
   transform: scale(0.5);
   transform-origin: bottom left;
+  opacity: 1;
 }
 
 .activeContact::after {
