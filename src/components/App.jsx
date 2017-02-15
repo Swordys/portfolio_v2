@@ -12,7 +12,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-wrap">
-        <AboutContent />
         <ProjectContent />
         <SkillsContent />
         <ContactContent />
@@ -20,6 +19,7 @@ class App extends React.Component {
           <Header />
           <Menu />
         </div>
+        <AboutContent />
       </div>
     );
   }

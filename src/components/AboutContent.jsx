@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import {styles} from '../styles/aboutContent.css'; // eslint-disable-line no-unused-vars
+import { styles } from '../styles/aboutContent.css'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 
 class AboutContent extends React.Component {
@@ -11,7 +11,14 @@ class AboutContent extends React.Component {
     }
     return (
       <div className={`about-content ${toggleClass}`}>
-        <h1>about</h1>
+        <div className="about-compo">
+          <div className="about-picture"></div>
+        </div>
+        <div className="about-compo">
+          <div className="about-text">
+
+          </div>
+        </div>
       </div>
     );
   }

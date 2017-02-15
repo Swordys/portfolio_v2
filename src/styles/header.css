@@ -37,10 +37,10 @@
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
   position: relative;
-  z-index: 3;
   transform: translate3d(-300px, 0, 0);
   transform-origin: left;
   opacity: 0;
+  z-index: 5;
 }
 
 .link-component-visable {
@@ -99,7 +99,6 @@
   position: absolute;
   top: 0;
   right: -100%;
-  z-index: -1;
 }
 
 
@@ -120,7 +119,6 @@
   position: absolute;
   top: 0;
   right: -100%;
-  z-index: -1;
 }
 
 
@@ -141,7 +139,6 @@
   position: absolute;
   top: 0;
   right: -100%;
-  z-index: -1;
 }
 
 
@@ -162,7 +159,6 @@
   position: absolute;
   top: 0;
   right: -100%;
-  z-index: -1;
 }
 
 @keyframes compoAnimo {
@@ -182,7 +178,7 @@
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  transition: color 300ms ease-out;
+  transition: all 300ms ease-out;
   /**/
   animation: animo 350ms ease-out forwards;
   animation-play-state: paused;
@@ -197,7 +193,7 @@
   position: absolute;
   right: 0;
   top: 50%;
-  z-index: 0;
+  z-index: 1;
   opacity: 0;
   margin-right: calc(5vw + 30px);
   transform: translate3d(105vw, -50%, 0) rotate(25deg);
@@ -225,8 +221,6 @@
   transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   animation-delay: 250ms;
-  position: relative;
-  z-index: 2;
 }
 
 .link-component:first-child a::before {
