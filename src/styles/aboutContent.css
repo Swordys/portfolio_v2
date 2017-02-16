@@ -1,45 +1,37 @@
 .about-content {
   width: 100%;
-  height: 100vh;
-  margin-top: 12vh;
+  height: 87.5vh;
   position: absolute;
   font-family: 'ThickFont';
-  top: 0;
+  bottom: 0;
   left: 0;
   background: #f9f9f9;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transform: translateY(-25vh);
-  transition: transform 600ms cubic-bezier(.86, .28, .18, .85);
+  transform: translateY(15vh);
+  transition: transform 500ms cubic-bezier(.86, .28, .18, .85);
   opacity: 0;
   pointer-events: none;
-  flex-direction: column;
   overflow-y: auto;
 }
 
 .contentActive {
   opacity: 1;
   transform: translateY(0);
-  transform-origin: top;
+  transform-origin: bottom;
   pointer-events: all;
 }
 
 .about-compo {
-  height: 500px;
+  height: 100%;
   width: 100%;
-  background: #f9f9f9;
+  background: #FDFDFD;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50vw;
-  padding: 50px 50px 0 50px;
-  border: 1px solid red;
-}
-
-.about-compo:last-child{
-  margin-bottom: 12vh;
-  padding-bottom: 50px;
+  padding: 20px;
+  border-left: 1px solid lightgrey;
 }
 
 .about-picture {
@@ -58,11 +50,16 @@
   background: lightpink;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .about-content {
     flex-direction: column;
   }
   .about-compo {
     min-height: 70vh;
+    padding: 50px 50px 0 50px;
+    margin-bottom: 0;
+  }
+  .about-compo:last-child {
+    padding-bottom: 50px;
   }
 }
