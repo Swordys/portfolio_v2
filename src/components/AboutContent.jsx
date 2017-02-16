@@ -27,7 +27,9 @@ class AboutContent extends React.Component {
         </div>
         <div className={`about-compo ${toggleCompo}`}>
           <div className="about-text">
-
+            <p className="text-wrap">
+              I'm David, a passionate front-end developer, who loves challenging himself, whether it be learning new library or solving a tricky problem. I always strive for greatness, trying to better myself fiscally and mentally. I believe I have a solid foundation of the core concepts of web design and functionality. The previous OOP experience helped me with clean code principles and optimal solution planning, but freedom of web environment gave me the inspiration to work on projects that people would enjoy.
+            </p>
           </div>
         </div>
       </div>
