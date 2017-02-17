@@ -40,7 +40,6 @@
   transform: translate3d(-300px, 0, 0);
   transform-origin: left;
   opacity: 0;
-  z-index: 5;
 }
 
 .link-component-visable {
@@ -106,7 +105,9 @@
 
 .activeProjects {
   transform: scale(0.5) translateY(-201%);
-  transform-origin: left top;
+  transition: all 450ms ease-out;
+  transform-origin: top left;
+  transition-delay: none;
   opacity: 1;
 }
 

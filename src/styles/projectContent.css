@@ -1,23 +1,68 @@
 .project-content {
   width: 100%;
-  height: 100vh;
+  height: 87.7vh;
   position: absolute;
   font-family: 'ThickFont';
-  top: 0;
+  bottom: 0;
   left: 0;
-  background: hotpink;
+  background: #f9f9f9;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  transform: translateY(-25vh);
-  transition: transform 600ms cubic-bezier(.86, .28, .18, .85);
+  transform: translateY(20vh);
+  transition: transform 500ms ease-out;
+  transition-delay: 100ms;
   opacity: 0;
   pointer-events: none;
+  overflow-y: hidden;
+  border-top: 1px solid lightgray;
+  perspective: 5000px;
 }
 
 .contentActive {
   opacity: 1;
   transform: translateY(0);
-  transform-origin: top;
+  transform-origin: bottom;
   pointer-events: all;
+  padding: 15px;
+}
+
+.project-container {
+  width: 100%;
+  height: 100%;
+  background: royalblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow-y: auto;
+}
+
+.project-file {
+  height: 300px;
+  width: 400px;
+  background: white;
+  margin: 25px;
+  box-shadow: 0px 38px 101px -56px rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
+}
+
+@media (max-width: 1000px) {
+  .contentActive {
+    padding: 0;
+  }
+  .project-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    /*flex-direction: column;*/
+  }
+  .project-file {
+    width: 90%;
+    height: 80%;
+    margin: 50px 50px 0 50px;
+  }
+  .project-file:last-child {
+    margin-bottom: 50px;
+  }
 }

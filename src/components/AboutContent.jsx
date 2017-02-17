@@ -20,16 +20,18 @@ class AboutContent extends React.Component {
         <div className={`about-compo ${toggleCompo}`}>
           <div className="pic-wrap">
             <div className={`about-picture ${togglePic}`}>
-              <div className={`about-frame ${toggleFrame}`}>
-              </div>
+              <div className={`about-frame ${toggleFrame}`} />
             </div>
           </div>
         </div>
         <div className={`about-compo ${toggleCompo}`}>
           <div className="about-text">
-            <p className="text-wrap">
-              I'm David, a passionate front-end developer, who loves challenging himself, whether it be learning new library or solving a tricky problem. I always strive for greatness, trying to better myself fiscally and mentally. I believe I have a solid foundation of the core concepts of web design and functionality. The previous OOP experience helped me with clean code principles and optimal solution planning, but freedom of web environment gave me the inspiration to work on projects that people would enjoy.
-            </p>
+            <div className="text-inner-wrap">
+              <h2 className="hi">hi</h2>
+              <p className="text-wrap">
+                I'm David, a passionate front-end developer, who loves challenging himself, whether it be learning new library or solving a tricky problem. I always strive for greatness, trying to better myself fiscally and mentally. I believe I have a solid foundation of the core concepts of web design and functionality. The previous OOP experience helped me with clean code principles and optimal solution planning, but freedom of web environment gave me the inspiration to work on projects that people would enjoy.
+              </p>
+            </div>
           </div>
         </div>
       </div>

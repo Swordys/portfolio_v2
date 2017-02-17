@@ -92,6 +92,7 @@
     "sinon-chai": "2.8.0",
     "style-loader": "0.13.1",
     "textures": "1.0.4",
+    "trianglify": "1.0.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
     "webpack-bundle-analyzer": "2.1.1",

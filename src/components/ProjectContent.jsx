@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
-import {styles} from '../styles/projectContent.css'; // eslint-disable-line no-unused-vars
+import { styles } from '../styles/projectContent.css'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 
 class ProjectContent extends React.Component {
+
   render() {
     const { projectState } = this.props;
     let toggleClass = '';
@@ -11,7 +12,16 @@ class ProjectContent extends React.Component {
     }
     return (
       <div className={`project-content ${toggleClass}`}>
-        <h1>project</h1>
+        <div className="project-container">
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+        </div>
       </div>
     );
   }

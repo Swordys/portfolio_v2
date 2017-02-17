@@ -11,3 +11,7 @@ html,
   width: 100%;
   background: #eee;
 }
+
+#app{
+  background: none;
+}
