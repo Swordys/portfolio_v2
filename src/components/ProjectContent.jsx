@@ -7,37 +7,123 @@ class ProjectContent extends React.Component {
   render() {
     const { projectState } = this.props;
     let toggleClass = '';
+    let toggleProj = '';
     if (projectState) {
       toggleClass = 'contentActive';
+      toggleProj = 'projectActive';
     }
     return (
       <div className={`project-content ${toggleClass}`}>
         <div className="project-container">
-          <div className="project-file">
-            <div className="file-pic"></div>
-            <div className="file-info">
-              <span className="info-text">
-                react messenger
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
               </span>
+              </div>
             </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
-          <div className="project-file">
+          <div className={`project-file ${toggleProj}`}>
+            <div className="project-wrap">
+              <div className="file-pic">
+              </div>
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

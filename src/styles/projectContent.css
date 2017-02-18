@@ -45,43 +45,59 @@
   margin: 50px;
   box-shadow: 0px 38px 101px -56px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  transform: translateY(20vh);
+  transition: all 400ms cubic-bezier(.72,.35,.46,.81);
+  transition-delay: 300ms;
+  opacity: 0;
+}
+
+.projectActive {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.project-wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.project-file:hover .file-pic {
+  transform: rotate3d(0, 1, 0, 25deg);
+  opacity: 0;
+}
+
+.project-file:hover .file-info {
+  opacity: 1;
+  transform: rotate3d(0, 1, 0, 0deg);
 }
 
 .file-pic {
   height: 100%;
   width: 100%;
-  background: url('./img/projScreens/messenger.jpg');
   background-size: cover;
   background-position: center center;
   transition: all 0.3s ease-out;
   position: relative;
-}
-
-
-.file-pic:hover::after {
-  transform: rotate3d(0, 1, 0, 0deg);
-  opacity: 1;
-}
-
-.file-pic::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: #f9f9f9;
-  position: absolute;
-  opacity: 0;
-  transform: rotate3d(0, 1, 0, -15deg);
+  border: 1px solid white;
   transform-origin: left;
-  transition: all 0.3s ease-out;
 }
 
 .file-info {
-  height: 20%;
+  height: 100%;
   width: 100%;
   background: #f9f9f9;
   display: flex;
-  align-items: center;
-  transform: rotate3d(0, 0, 0, 45deg);
+  align-items: flex-start;
+  transform: rotate3d(0, 1, 0, -35deg);
+  transform-origin: left;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  transition: all 300ms ease-out;
 }
 
 .info-text {
@@ -91,52 +107,61 @@
 }
 
 .project-file:first-child {
+  background: url('./img/projScreens/messenger.jpg');
   background-size: cover;
   background-position: center center;
-  display: flex;
-  flex-direction: column;
+  transition-delay: 300ms;
 }
 
 .project-file:nth-child(2) {
   background: url('./img/projScreens/movies.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 350ms;
 }
 
 .project-file:nth-child(3) {
   background: url('./img/projScreens/notemate.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 400ms;
 }
 
 .project-file:nth-child(4) {
   background: url('./img/projScreens/oldportf.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 450ms;
+
 }
 
 .project-file:nth-child(5) {
   background: url('./img/projScreens/weatherfast.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 500ms;
+
 }
 
 .project-file:nth-child(6) {
   background: url('./img/projScreens/radio.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 550ms;
 }
 
 .project-file:nth-child(7) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 600ms;
 }
 
 .project-file:nth-child(8) {
   background: url('./img/projScreens/calc.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 650ms;
 }
 
 .project-file:nth-child(9) {
@@ -149,12 +174,14 @@
   background: url('./img/projScreens/galaxsys6.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 700ms;
 }
 
 .project-file:nth-child(11) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 750ms;
 }
 
 @media (max-width: 1000px) {
