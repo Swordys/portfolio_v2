@@ -14,6 +14,12 @@ class ProjectContent extends React.Component {
       <div className={`project-content ${toggleClass}`}>
         <div className="project-container">
           <div className="project-file">
+            <div className="file-pic"></div>
+            <div className="file-info">
+              <span className="info-text">
+                react messenger
+              </span>
+            </div>
           </div>
           <div className="project-file">
           </div>

@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transform: translateY(20vh);
+  transform: translateY(50vh);
   transition: transform 500ms ease-out;
   transition-delay: 100ms;
   opacity: 0;
@@ -42,16 +42,59 @@
 .project-file {
   height: 400px;
   width: 450px;
-  background: white;
   margin: 50px;
   box-shadow: 0px 38px 101px -56px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
 }
 
-.project-file:first-child {
+.file-pic {
+  height: 100%;
+  width: 100%;
   background: url('./img/projScreens/messenger.jpg');
   background-size: cover;
   background-position: center center;
+  transition: all 0.3s ease-out;
+  position: relative;
+}
+
+
+.file-pic:hover::after {
+  transform: rotate3d(0, 1, 0, 0deg);
+  opacity: 1;
+}
+
+.file-pic::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #f9f9f9;
+  position: absolute;
+  opacity: 0;
+  transform: rotate3d(0, 1, 0, -15deg);
+  transform-origin: left;
+  transition: all 0.3s ease-out;
+}
+
+.file-info {
+  height: 20%;
+  width: 100%;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  transform: rotate3d(0, 0, 0, 45deg);
+}
+
+.info-text {
+  padding: 20px;
+  color: royalblue;
+  font-size: 1.6vh;
+}
+
+.project-file:first-child {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-file:nth-child(2) {
