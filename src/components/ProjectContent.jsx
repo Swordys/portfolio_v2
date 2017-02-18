@@ -21,6 +21,18 @@ class ProjectContent extends React.Component {
           </div>
           <div className="project-file">
           </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
+          <div className="project-file">
+          </div>
         </div>
       </div>
     );

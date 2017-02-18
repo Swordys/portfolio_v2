@@ -40,12 +40,78 @@
 }
 
 .project-file {
-  height: 300px;
-  width: 400px;
+  height: 400px;
+  width: 450px;
   background: white;
-  margin: 25px;
+  margin: 50px;
   box-shadow: 0px 38px 101px -56px rgba(0, 0, 0, 0.75);
   border-radius: 2px;
+}
+
+.project-file:first-child {
+  background: url('./img/projScreens/messenger.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(2) {
+  background: url('./img/projScreens/movies.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(3) {
+  background: url('./img/projScreens/notemate.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(4) {
+  background: url('./img/projScreens/oldportf.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(5) {
+  background: url('./img/projScreens/weatherfast.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(6) {
+  background: url('./img/projScreens/radio.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(7) {
+  background: url('./img/projScreens/todoapp.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(8) {
+  background: url('./img/projScreens/calc.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(9) {
+  background: url('./img/projScreens/server.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(10) {
+  background: url('./img/projScreens/galaxsys6.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.project-file:nth-child(11) {
+  background: url('./img/projScreens/todoapp.jpg');
+  background-size: cover;
+  background-position: center center;
 }
 
 @media (max-width: 1000px) {
@@ -59,8 +125,9 @@
   }
   .project-file {
     width: 90%;
-    height: 80%;
+    height: 60%;
     margin: 50px 50px 0 50px;
+    background-size: 500px;
   }
   .project-file:last-child {
     margin-bottom: 50px;
