@@ -9,13 +9,13 @@ class ProjectContent extends React.Component {
     let toggleClass = '';
     let toggleProj = '';
     if (projectState) {
-      toggleClass = 'contentActive';
+      toggleClass = 'contentActiveProject';
       toggleProj = 'projectActive';
     }
     return (
       <div className={`project-content ${toggleClass}`}>
         <div className="project-container">
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#1" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -26,7 +26,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#2" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -37,7 +37,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#3" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -48,7 +48,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#4" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -59,7 +59,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#5" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -70,7 +70,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#6" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -81,7 +81,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#7" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -92,7 +92,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#8" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -103,7 +103,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#9" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>
@@ -114,7 +114,7 @@ class ProjectContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className={`project-file ${toggleProj}`}>
+          <div key="#10" className={`project-file ${toggleProj}`}>
             <div className="project-wrap">
               <div className="file-pic">
               </div>

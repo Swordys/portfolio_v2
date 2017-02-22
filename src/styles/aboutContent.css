@@ -18,7 +18,7 @@
   perspective: 5000px;
 }
 
-.contentActive {
+.aboutActive {
   opacity: 1;
   transform: translateY(0);
   transform-origin: bottom;
@@ -138,5 +138,6 @@
   }
   .text-wrap {
     font-size: 3vh;
+    padding-bottom: 30px;
   }
 }

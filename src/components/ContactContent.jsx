@@ -7,7 +7,7 @@ class ContactContent extends React.Component {
     const { contactState } = this.props;
     let toggleClass = '';
     if (contactState) {
-      toggleClass = 'contentActive';
+      toggleClass = 'contactActive';
     }
     return (
       <div className={`contact-content ${toggleClass}`}>

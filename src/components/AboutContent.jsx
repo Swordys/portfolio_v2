@@ -11,7 +11,7 @@ class AboutContent extends React.Component {
     let toggleFrame = '';
     if (aboutState) {
       toggleCompo = 'about-compo-active';
-      toggleClass = 'contentActive';
+      toggleClass = 'aboutActive';
       togglePic = 'about-picture-active';
       toggleFrame = 'about-frame-active';
     }

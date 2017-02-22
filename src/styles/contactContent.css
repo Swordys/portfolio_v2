@@ -15,7 +15,7 @@
   pointer-events: none;
 }
 
-.contentActive {
+.contactActive {
   opacity: 1;
   transform: translateY(0);
   transform-origin: bottom;
