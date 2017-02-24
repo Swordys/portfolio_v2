@@ -36,6 +36,7 @@ class Header extends React.Component {
       toggleContact,
     } = this.props;
 
+
     if (locationState !== '/') {
       this.setState({
         clicked: true,
@@ -48,7 +49,6 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: hideClass,
         hideClassAbout: 'activeAbout',
-        enter: true,
       });
       toggleAbout(true);
       toggleProject(false);
@@ -62,7 +62,6 @@ class Header extends React.Component {
         hideClassAbout: hideClass,
         hideClassSkills: hideClass,
         hideClassProjects: 'activeProjects',
-        enter: true,
       });
       toggleProject(true);
       toggleSkills(false);
@@ -77,7 +76,6 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: 'activeSkills',
         linkWrap: 'reverseFlex',
-        enter: true,
       });
       toggleSkills(true);
       toggleContact(false);
@@ -92,7 +90,6 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassContact: 'activeContact',
         linkWrap: 'reverseFlex',
-        enter: true,
       });
       toggleContact(true);
       toggleAbout(false);
@@ -141,6 +138,7 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: hideClass,
         hideClassAbout: 'activeAbout',
+        clicked: true,
       });
       toggleAbout(true);
     }
@@ -151,6 +149,7 @@ class Header extends React.Component {
         hideClassAbout: hideClass,
         hideClassSkills: hideClass,
         hideClassProjects: 'activeProjects',
+        clicked: true,
       });
       toggleProject(true);
     }
@@ -162,6 +161,7 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: 'activeSkills',
         linkWrap: 'reverseFlex',
+        clicked: true,
       });
       toggleSkills(true);
     }
@@ -173,6 +173,7 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassContact: 'activeContact',
         linkWrap: 'reverseFlex',
+        clicked: true,
       });
       toggleContact(true);
     }
@@ -183,6 +184,7 @@ class Header extends React.Component {
     let showLogo = '';
     let sliderClass = '';
     let animationStart = {};
+    let animationStartLogo = {};
     const {
       hideClassAbout,
       hideClassProjects,
@@ -192,6 +194,7 @@ class Header extends React.Component {
       clicked,
     } = this.state;
 
+
     const {sliderState} = this.props;
     if (sliderState) {
       sliderClass = 'link-component-visable';
@@ -200,13 +203,17 @@ class Header extends React.Component {
       };
     }
     if (clicked) {
-      showLogo = 'showLogo';
       animationStart = {
         animationPlayState: 'running',
       };
+      animationStartLogo = {
+        animationPlayState: 'running',
+      };
+
     }
+
     return (
-      <div className="header-wrap" onClick={() => this.setState({ clicked: true })}>
+      <div className="header-wrap">
         <div className={`link-wrap ${linkWrap}`}>
           <div
             className={`link-component ${hideClassAbout} ${sliderClass}`}
@@ -221,7 +228,7 @@ class Header extends React.Component {
             >
               {this.state.about}
             </Link>
-            <div className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -238,7 +245,7 @@ class Header extends React.Component {
             >
               {this.state.projects}
             </Link>
-            <div className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -256,7 +263,7 @@ class Header extends React.Component {
             >
               {this.state.skills}
             </Link>
-            <div className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -274,7 +281,7 @@ class Header extends React.Component {
             >
               {this.state.contact}
             </Link>
-            <div className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
