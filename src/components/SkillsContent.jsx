@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import {styles} from '../styles/skillsContent.css'; // eslint-disable-line no-unused-vars
+import { styles } from '../styles/skillsContent.css'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 
 class SkillsContent extends React.Component {
@@ -7,11 +7,44 @@ class SkillsContent extends React.Component {
     const { skillsState } = this.props;
     let toggleClass = '';
     if (skillsState) {
-      toggleClass = 'contentActive';
+      toggleClass = 'skillsActive';
     }
     return (
       <div className={`skills-content ${toggleClass}`}>
-        <h1>skills</h1>
+        <div className='skills-container'>
+          <ul className='skill-list'>
+            <li>
+              c#
+            </li>
+            <li>
+              javascript
+            </li>
+            <li>
+              node
+            </li>
+            <li>
+              html5
+            </li>
+            <li>
+              css3
+            </li>
+            <li>
+              photoshop
+            </li>
+            <li>
+              react
+            </li>
+            <li>
+              redux
+            </li>
+            <li>
+              git
+            </li>
+            <li>
+              firebase
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
