@@ -24,6 +24,7 @@ class Header extends React.Component {
     this.glitchDaText = this.glitchDaText.bind(this);
     this.handleWordGlitch = this.handleWordGlitch.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.handleBackToMenu = this.handleBackToMenu.bind(this);
   }
 
   componentWillMount() {
@@ -180,6 +181,27 @@ class Header extends React.Component {
 
   }
 
+  handleBackToMenu() {
+    const {
+      toggleAbout,
+      toggleProject,
+      toggleSkills,
+      toggleContact,
+    } = this.props;
+
+    toggleContact(false);
+    toggleAbout(false);
+    toggleProject(false);
+    toggleSkills(false);
+    this.setState({
+      hideClassContact: '',
+      hideClassProjects: '',
+      hideClassSkills: '',
+      hideClassAbout: '',
+      clicked: false,
+    });
+  }
+
   render() {
     let showLogo = '';
     let sliderClass = '';
@@ -195,21 +217,25 @@ class Header extends React.Component {
     } = this.state;
 
 
-    const {sliderState} = this.props;
+    const { sliderState } = this.props;
     if (sliderState) {
       sliderClass = 'link-component-visable';
       animationStart = {
-        animationPlayState: 'running',
+        transform: "translateY(0) rotate3d(1, 0, 0, 0)",
+        opacity: "1",
       };
     }
     if (clicked) {
       animationStart = {
-        animationPlayState: 'running',
+        transform: "translateY(0) rotate3d(1, 0, 0, 0)",
+        opacity: "1",
       };
       animationStartLogo = {
-        animationPlayState: 'running',
+        opacity: "1",
+        transform: "translate3d(100vw, -50%, 0) rotate(0deg)",
+        transitionDelay: '400ms',
       };
-
+      sliderClass = 'link-component-visable';
     }
 
     return (
@@ -228,7 +254,7 @@ class Header extends React.Component {
             >
               {this.state.about}
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -245,7 +271,7 @@ class Header extends React.Component {
             >
               {this.state.projects}
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -263,7 +289,7 @@ class Header extends React.Component {
             >
               {this.state.skills}
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
@@ -281,7 +307,7 @@ class Header extends React.Component {
             >
               {this.state.contact}
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>

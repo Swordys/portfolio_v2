@@ -22,7 +22,7 @@ class ContactContent extends React.Component {
               </div>
               <span style={{ borderTop: '1px solid royalblue', paddingTop: "1.5vh", }}>
                 Always looking forward working on exciting and interesting projects.
-                If you're interested hit me up at <span style={{color: 'royalblue'}} >davit_saginashvili@yahoo.com</span> and let's discuss some business.
+                If you're interested hit me up at <span style={{ color: 'royalblue' }} >davit_saginashvili@yahoo.com</span> and let's discuss some business.
                 </span>
             </div>
           </div>
@@ -45,7 +45,7 @@ class ContactContent extends React.Component {
               </div>
               <span style={{ borderTop: '1px solid #CDDC39', paddingTop: "1.5vh" }}>
                 Some of my Stackoverflow answers.
-                 I try to be active when I can while providing clear solutions.
+                 I try to be active when I can..
                  </span>
             </div>
           </div>
