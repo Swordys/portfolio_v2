@@ -128,14 +128,6 @@
   opacity: 1;
 }
 
-@keyframes compoAnimo {
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    pointer-events: all;
-  }
-}
-
 
 /*----------MENU - TEXT---------*/
 
@@ -150,11 +142,6 @@
   transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   cursor: pointer;
-}
-
-.list-animation-running {
-  transform: translateY(0) rotate3d(1, 0, 0, 0);
-  opacity: 1;
 }
 
 .logo {
@@ -174,13 +161,6 @@
 .logo-main {
   height: 10vh;
   width: auto;
-}
-
-@keyframes showLog {
-  100% {
-    opacity: 1;
-    transform: translate3d(100vw, -50%, 0);
-  }
 }
 
 
@@ -239,9 +219,3 @@
   color: #dcdcdc
 }
 
-@keyframes animo {
-  100% {
-    transform: translateY(0) rotate3d(1, 0, 0, 0);
-    opacity: 1;
-  }
-}

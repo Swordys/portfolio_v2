@@ -246,6 +246,7 @@ class Header extends React.Component {
             id="about"
           >
             <Link
+              //ANIMATION STYLE CAUSING LAG FIX IT
               style={animationStart}
               id="about"
               onClick={this.handleToggle}
