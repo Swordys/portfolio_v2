@@ -219,6 +219,8 @@ class Header extends React.Component {
       sliderClass = 'link-component-visable';
     }
 
+    console.log(this.props.locationState);
+
     return (
       <div className="header-wrap">
         <div onClick={this.handleToggle} className={`link-wrap ${linkWrap}`}>
@@ -226,7 +228,8 @@ class Header extends React.Component {
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
             <div onClick={() => this.handleBackToMenu()} className="list-num">
-              <h1 className={clicked && 'listNumHide'}>
+              <h1 className={this.props.locationState === 'about' && 'listNumHide' ||
+                this.props.locationState === '/about' && 'listNumHide'}>
                 01
             </h1>
               <div className={`backBtn ${this.state.backArr === "back-showing-a" && this.state.backArr}`} >
@@ -246,7 +249,8 @@ class Header extends React.Component {
             className={`link-component ${hideClassProjects} ${sliderClass}`}
             id="projects">
             <div onClick={() => this.handleBackToMenu()} className="list-num">
-              <h1 className={clicked && 'listNumHide'}>
+              <h1 className={this.props.locationState === 'projects' && 'listNumHide' ||
+                this.props.locationState === '/projects' && 'listNumHide'}>
                 02
             </h1>
               <div className={`backBtn ${this.state.backArr === "back-showing-b" && this.state.backArr}`} >
@@ -267,7 +271,8 @@ class Header extends React.Component {
             style={{ transformOrigin: 'bottom left' }}
             id="skills">
             <div onClick={() => this.handleBackToMenu()} className="list-num">
-              <h1 className={clicked && 'listNumHide'}>
+              <h1 className={this.props.locationState === 'skills' && 'listNumHide' ||
+                this.props.locationState === '/skills' && 'listNumHide'}>
                 03
             </h1>
               <div className={`backBtn ${this.state.backArr === "back-showing-c" && this.state.backArr}`} >
@@ -288,7 +293,8 @@ class Header extends React.Component {
             style={{ transformOrigin: 'bottom left' }}
             id="contact">
             <div onClick={() => this.handleBackToMenu()} className="list-num">
-              <h1 className={clicked && 'listNumHide'}>
+              <h1 className={this.props.locationState === 'contact' && 'listNumHide' ||
+                this.props.locationState === '/contact' && 'listNumHide'}>
                 04
             </h1>
               <div className={`backBtn ${this.state.backArr === "back-showing-d" && this.state.backArr}`} >
