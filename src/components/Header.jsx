@@ -3,26 +3,20 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions.jsx';
-import glitchIt from '../constants/textGlitch.jsx';
 
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      about: 'about',
-      projects: 'projects',
-      skills: 'skills',
-      contact: 'contact',
       clicked: false,
       linkWrap: '',
       hideClassAbout: '',
       hideClassProjects: '',
       hideClassSkills: '',
       hideClassContact: '',
+      backArr: '',
     };
-    this.glitchDaText = this.glitchDaText.bind(this);
-    this.handleWordGlitch = this.handleWordGlitch.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleBackToMenu = this.handleBackToMenu.bind(this);
   }
@@ -50,6 +44,7 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: hideClass,
         hideClassAbout: 'activeAbout',
+        backArr: 'back-showing-a',
       });
       toggleAbout(true);
       toggleProject(false);
@@ -63,6 +58,7 @@ class Header extends React.Component {
         hideClassAbout: hideClass,
         hideClassSkills: hideClass,
         hideClassProjects: 'activeProjects',
+        backArr: 'back-showing-b',
       });
       toggleProject(true);
       toggleSkills(false);
@@ -77,6 +73,7 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassSkills: 'activeSkills',
         linkWrap: 'reverseFlex',
+        backArr: 'back-showing-c',
       });
       toggleSkills(true);
       toggleContact(false);
@@ -91,35 +88,13 @@ class Header extends React.Component {
         hideClassProjects: hideClass,
         hideClassContact: 'activeContact',
         linkWrap: 'reverseFlex',
+        backArr: 'back-showing-d',
       });
       toggleContact(true);
       toggleAbout(false);
       toggleProject(false);
       toggleSkills(false);
     }
-  }
-
-  // TURN OFF FOR MOBILE DEVICES
-  handleWordGlitch(e) {
-    if (!this.state.clicked) {
-      const value = e.target.id;
-      const words = glitchIt(value);
-      this.glitchDaText(words, 120, value);
-    }
-  }
-
-  glitchDaText(retWords, speed, value) {
-    const that = this;
-    (function timer() {
-      for (let i = 0; i < retWords.length; i++) {
-        setTimeout(() => {
-          value === 'about' ? that.setState({ about: retWords[i] }) : 'about';
-          value === 'projects' ? that.setState({ projects: retWords[i] }) : 'projects';
-          value === 'skills' ? that.setState({ skills: retWords[i] }) : 'skills';
-          value === 'contact' ? that.setState({ contact: retWords[i] }) : 'contact';
-        }, i * speed);
-      }
-    })();
   }
 
   handleToggle(e) {
@@ -140,6 +115,7 @@ class Header extends React.Component {
         hideClassSkills: hideClass,
         hideClassAbout: 'activeAbout',
         clicked: true,
+        backArr: 'back-showing-a',
       });
       toggleAbout(true);
     }
@@ -151,6 +127,7 @@ class Header extends React.Component {
         hideClassSkills: hideClass,
         hideClassProjects: 'activeProjects',
         clicked: true,
+        backArr: 'back-showing-b',
       });
       toggleProject(true);
     }
@@ -163,6 +140,7 @@ class Header extends React.Component {
         hideClassSkills: 'activeSkills',
         linkWrap: 'reverseFlex',
         clicked: true,
+        backArr: 'back-showing-c',
       });
       toggleSkills(true);
     }
@@ -175,10 +153,10 @@ class Header extends React.Component {
         hideClassContact: 'activeContact',
         linkWrap: 'reverseFlex',
         clicked: true,
+        backArr: 'back-showing-d',
       });
       toggleContact(true);
     }
-
   }
 
   handleBackToMenu() {
@@ -199,6 +177,7 @@ class Header extends React.Component {
       hideClassSkills: '',
       hideClassAbout: '',
       clicked: false,
+      backArr: '',
     });
   }
 
@@ -233,82 +212,93 @@ class Header extends React.Component {
       animationStartLogo = {
         opacity: "1",
         transform: "translate3d(100vw, -50%, 0) rotate(0deg)",
-        transitionDelay: '400ms',
+        transitionDelay: '500ms',
       };
       sliderClass = 'link-component-visable';
     }
 
     return (
       <div className="header-wrap">
-        <div className={`link-wrap ${linkWrap}`}>
+        <div onClick={this.handleToggle} className={`link-wrap ${linkWrap}`}>
           <div
             className={`link-component ${hideClassAbout} ${sliderClass}`}
-            id="about"
-          >
+            id="about">
+            <div onClick={() => this.handleBackToMenu()} className="list-num">
+              <h1 className={clicked && 'listNumHide'}>
+                01
+            </h1>
+              <div className={`backBtn ${this.state.backArr === "back-showing-a" && this.state.backArr}`} >
+                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+              </div>
+            </div>
             <Link
-              //ANIMATION STYLE CAUSING LAG FIX IT
               style={animationStart}
               id="about"
-              onClick={this.handleToggle}
-              to="about"
-              href="#"
-            >
-              {this.state.about}
+              to="about">about
             </Link>
-            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo`}>
+            <div style={animationStartLogo} className={`logo`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
           <div
             className={`link-component ${hideClassProjects} ${sliderClass}`}
-            id="projects"
-          >
+            id="projects">
+            <div onClick={() => this.handleBackToMenu()} className="list-num">
+              <h1 className={clicked && 'listNumHide'}>
+                02
+            </h1>
+              <div className={`backBtn ${this.state.backArr === "back-showing-b" && this.state.backArr}`} >
+                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+              </div>
+            </div>
             <Link
               style={animationStart}
               id="projects"
-              onClick={this.handleToggle}
-              to="projects"
-              href="#"
-            >
-              {this.state.projects}
+              to="projects">projects
             </Link>
-            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
           <div
             className={`link-component ${hideClassSkills} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
-            id="skills"
-          >
+            id="skills">
+            <div onClick={() => this.handleBackToMenu()} className="list-num">
+              <h1 className={clicked && 'listNumHide'}>
+                03
+            </h1>
+              <div className={`backBtn ${this.state.backArr === "back-showing-c" && this.state.backArr}`} >
+                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+              </div>
+            </div>
             <Link
               style={animationStart}
               id="skills"
-              onClick={this.handleToggle}
-              to="skills"
-              href="#"
-            >
-              {this.state.skills}
+              to="skills">skills
             </Link>
-            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>
           <div
             className={`link-component ${hideClassContact} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
-            id="contact"
-          >
+            id="contact">
+            <div onClick={() => this.handleBackToMenu()} className="list-num">
+              <h1 className={clicked && 'listNumHide'}>
+                04
+            </h1>
+              <div className={`backBtn ${this.state.backArr === "back-showing-d" && this.state.backArr}`} >
+                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+              </div>
+            </div>
             <Link
               style={animationStart}
               id="contact"
-              onClick={this.handleToggle}
-              to="contact"
-              href="#"
-            >
-              {this.state.contact}
+              to="contact">contact
             </Link>
-            <div onClick={() => this.handleBackToMenu()} style={animationStartLogo} className={`logo ${showLogo}`}>
+            <div style={animationStartLogo} className={`logo ${showLogo}`}>
               <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
             </div>
           </div>

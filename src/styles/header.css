@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'ThickFont';
-  src: url(webfonts/32FE5F_1_0.woff2);
+  src: url("webfonts/32FE5F_1_0.woff");
 }
 
 .header-wrap {
@@ -92,6 +92,7 @@
   pointer-events: none;
 }
 
+
 /*ABOUT - TAB*/
 
 .activeAbout {
@@ -132,16 +133,17 @@
 /*----------MENU - TEXT---------*/
 
 .link-component a {
-  padding: 30px 0 30px 0;
+  margin: 30px 0 30px 0;
   text-decoration: none;
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  transition: all 300ms ease-out;
+  transition: all 500ms ease-out;
   opacity: 0;
   transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   cursor: pointer;
+  margin-left: 2vh;
 }
 
 .logo {
@@ -160,7 +162,55 @@
 
 .logo-main {
   height: 10vh;
-  width: auto;
+}
+
+.link-component h1 {
+  color: #dcdcdc;
+  font-size: 9vh;
+  font-family: "thickfont";
+  position: relative;
+  transition: all 300ms ease-out;
+}
+
+.listNumHide {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.list-num {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.backBtn {
+  position: absolute;
+  transform: translate3d(0, 70%, 0);
+  opacity: 0.01;
+  padding-top: 0.2vh;
+  transition: all 400ms ease-out;
+  cursor: pointer;
+  padding: 0 2vh 0 2vh;
+}
+
+.back-showing-a {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+}
+
+.back-showing-b {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+}
+
+.back-showing-c {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+}
+
+.back-showing-d {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
 }
 
 
@@ -170,25 +220,11 @@
   transition-delay: 250ms;
 }
 
-.link-component:first-child a::before {
-  content: '01';
-  margin: 0 0.3em 0 0.1em;
-  font-size: 1em;
-  color: #dcdcdc;
-}
-
 
 /*PROJECTS*/
 
 .link-component:nth-child(2) a {
   transition-delay: 350ms;
-}
-
-.link-component:nth-child(2) a::before {
-  content: '02';
-  margin: 0 0.3em 0 0.1em;
-  font-size: 1em;
-  color: #dcdcdc
 }
 
 
@@ -198,24 +234,9 @@
   transition-delay: 450ms;
 }
 
-.link-component:nth-child(3) a::before {
-  content: '03';
-  margin: 0 0.3em 0 0.1em;
-  font-size: 1em;
-  color: #dcdcdc
-}
-
 
 /*CONTACT*/
 
 .link-component:last-child a {
   transition-delay: 550ms;
 }
-
-.link-component:last-child a::before {
-  content: '04';
-  margin: 0 0.3em 0 0.1em;
-  font-size: 1em;
-  color: #dcdcdc
-}
-
