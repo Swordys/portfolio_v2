@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div className="main-wrap">
         <div className="main-menu-wrap">
-          <Header />
+          <Header router={this.props.router} />
           <Menu />
         </div>
         <AboutContent />

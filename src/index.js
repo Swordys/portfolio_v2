@@ -19,7 +19,7 @@ history.listen(location => store.dispatch(currentLocationState(location.pathname
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route path="/" router={Router} component={App}>
         <Route path="about" component={About} />
         <Route path="projects" component={Projects} />
         <Route path="skills" component={Skills} />

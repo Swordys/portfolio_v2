@@ -166,7 +166,7 @@
 
 .link-component h1 {
   color: #dcdcdc;
-  font-size: 9vh;
+  font-size: 8.5vh;
   font-family: "thickfont";
   position: relative;
   transition: all 300ms ease-out;
@@ -181,12 +181,15 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .backBtn {
   position: absolute;
   transform: translate3d(0, 70%, 0);
   opacity: 0.01;
+  left: 0;
+  width: 100%;
   padding-top: 0.2vh;
   transition: all 400ms ease-out;
   cursor: pointer;

@@ -166,7 +166,6 @@ class Header extends React.Component {
       toggleSkills,
       toggleContact,
     } = this.props;
-
     toggleContact(false);
     toggleAbout(false);
     toggleProject(false);
@@ -176,9 +175,10 @@ class Header extends React.Component {
       hideClassProjects: '',
       hideClassSkills: '',
       hideClassAbout: '',
-      clicked: false,
+      clicked: true,
       backArr: '',
     });
+    this.props.router.push('');
   }
 
   render() {
@@ -199,10 +199,12 @@ class Header extends React.Component {
     const { sliderState } = this.props;
     if (sliderState) {
       sliderClass = 'link-component-visable';
+
       animationStart = {
         transform: "translateY(0) rotate3d(1, 0, 0, 0)",
         opacity: "1",
       };
+      sliderClass = 'link-component-visable';
     }
     if (clicked) {
       animationStart = {
