@@ -100,6 +100,7 @@ class Header extends React.Component {
   handleToggle(e) {
     const value = e.target.id;
     Actions.currentLocationState(value);
+    this.props.router.push(`/${value}`);
     const hideClass = 'hide-component';
     const {
       toggleAbout,
@@ -215,11 +216,10 @@ class Header extends React.Component {
         opacity: "1",
         transform: "translate3d(100vw, -50%, 0) rotate(0deg)",
         transitionDelay: '500ms',
+        pointerEvents: 'none'
       };
       sliderClass = 'link-component-visable';
     }
-
-    console.log(this.props.locationState);
 
     return (
       <div className="header-wrap">
@@ -227,7 +227,7 @@ class Header extends React.Component {
           <div
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
-            <div onClick={() => this.handleBackToMenu()} className="list-num">
+            <div onClick={this.handleBackToMenu} className="list-num">
               <h1 className={this.props.locationState === 'about' && 'listNumHide' ||
                 this.props.locationState === '/about' && 'listNumHide'}>
                 01
@@ -248,7 +248,7 @@ class Header extends React.Component {
           <div
             className={`link-component ${hideClassProjects} ${sliderClass}`}
             id="projects">
-            <div onClick={() => this.handleBackToMenu()} className="list-num">
+            <div onClick={this.handleBackToMenu} className="list-num">
               <h1 className={this.props.locationState === 'projects' && 'listNumHide' ||
                 this.props.locationState === '/projects' && 'listNumHide'}>
                 02
@@ -270,7 +270,7 @@ class Header extends React.Component {
             className={`link-component ${hideClassSkills} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="skills">
-            <div onClick={() => this.handleBackToMenu()} className="list-num">
+            <div onClick={this.handleBackToMenu} className="list-num">
               <h1 className={this.props.locationState === 'skills' && 'listNumHide' ||
                 this.props.locationState === '/skills' && 'listNumHide'}>
                 03
@@ -292,7 +292,7 @@ class Header extends React.Component {
             className={`link-component ${hideClassContact} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="contact">
-            <div onClick={() => this.handleBackToMenu()} className="list-num">
+            <div onClick={this.handleBackToMenu} className="list-num">
               <h1 className={this.props.locationState === 'contact' && 'listNumHide' ||
                 this.props.locationState === '/contact' && 'listNumHide'}>
                 04

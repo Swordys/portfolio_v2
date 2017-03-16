@@ -199,21 +199,25 @@
 .back-showing-a {
   opacity: 1;
   transform: translate3d(0, 0%, 0);
+  transition-delay: 100ms;
 }
 
 .back-showing-b {
   opacity: 1;
   transform: translate3d(0, 0%, 0);
+  transition-delay: 200ms;
 }
 
 .back-showing-c {
   opacity: 1;
   transform: translate3d(0, 0%, 0);
+  transition-delay: 200ms;
 }
 
 .back-showing-d {
   opacity: 1;
   transform: translate3d(0, 0%, 0);
+  transition-delay: 100ms;
 }
 
 
