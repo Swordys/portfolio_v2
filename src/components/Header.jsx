@@ -98,9 +98,13 @@ class Header extends React.Component {
   }
 
   handleToggle(e) {
+
+    if (this.state.backArr) {
+      this.handleBackToMenu();
+      return;
+    }
     const value = e.target.id;
-    Actions.currentLocationState(value);
-    this.props.router.push(`/${value}`);
+
     const hideClass = 'hide-component';
     const {
       toggleAbout,
@@ -109,14 +113,15 @@ class Header extends React.Component {
       toggleContact,
     } = this.props;
 
+
     if (value === 'about') {
       this.setState({
         hideClassContact: hideClass,
         hideClassProjects: hideClass,
         hideClassSkills: hideClass,
         hideClassAbout: 'activeAbout',
-        clicked: true,
         backArr: 'back-showing-a',
+        clicked: true,
       });
       toggleAbout(true);
     }
@@ -192,6 +197,7 @@ class Header extends React.Component {
       hideClassProjects,
       hideClassSkills,
       hideClassContact,
+      backArr,
       linkWrap,
       clicked,
     } = this.state;
@@ -214,7 +220,7 @@ class Header extends React.Component {
       };
       animationStartLogo = {
         opacity: "1",
-        transform: "translate3d(100vw, -50%, 0) rotate(0deg)",
+        transform: "translate3d(100vw, 0, 0) rotate(0deg)",
         transitionDelay: '500ms',
         pointerEvents: 'none'
       };
@@ -227,12 +233,11 @@ class Header extends React.Component {
           <div
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
-            <div onClick={this.handleBackToMenu} className="list-num">
-              <h1 className={this.props.locationState === 'about' && 'listNumHide' ||
-                this.props.locationState === '/about' && 'listNumHide'}>
+            <div className="list-num">
+              <h1 className={backArr === 'back-showing-a' && 'listNumHide'}>
                 01
             </h1>
-              <div className={`backBtn ${this.state.backArr === "back-showing-a" && this.state.backArr}`} >
+              <div className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
                 <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
               </div>
             </div>
@@ -248,12 +253,11 @@ class Header extends React.Component {
           <div
             className={`link-component ${hideClassProjects} ${sliderClass}`}
             id="projects">
-            <div onClick={this.handleBackToMenu} className="list-num">
-              <h1 className={this.props.locationState === 'projects' && 'listNumHide' ||
-                this.props.locationState === '/projects' && 'listNumHide'}>
+            <div className="list-num">
+              <h1 className={backArr === 'back-showing-b' && 'listNumHide'}>
                 02
             </h1>
-              <div className={`backBtn ${this.state.backArr === "back-showing-b" && this.state.backArr}`} >
+              <div className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
                 <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
               </div>
             </div>
@@ -270,12 +274,11 @@ class Header extends React.Component {
             className={`link-component ${hideClassSkills} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="skills">
-            <div onClick={this.handleBackToMenu} className="list-num">
-              <h1 className={this.props.locationState === 'skills' && 'listNumHide' ||
-                this.props.locationState === '/skills' && 'listNumHide'}>
+            <div className="list-num">
+              <h1 className={backArr === 'back-showing-c' && 'listNumHide'}>
                 03
             </h1>
-              <div className={`backBtn ${this.state.backArr === "back-showing-c" && this.state.backArr}`} >
+              <div className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
                 <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
               </div>
             </div>
@@ -292,12 +295,11 @@ class Header extends React.Component {
             className={`link-component ${hideClassContact} ${sliderClass}`}
             style={{ transformOrigin: 'bottom left' }}
             id="contact">
-            <div onClick={this.handleBackToMenu} className="list-num">
-              <h1 className={this.props.locationState === 'contact' && 'listNumHide' ||
-                this.props.locationState === '/contact' && 'listNumHide'}>
+            <div className="list-num">
+              <h1 className={backArr === 'back-showing-d' && 'listNumHide'}>
                 04
             </h1>
-              <div className={`backBtn ${this.state.backArr === "back-showing-d" && this.state.backArr}`} >
+              <div className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
                 <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
               </div>
             </div>

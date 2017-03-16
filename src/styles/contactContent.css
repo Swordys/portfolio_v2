@@ -48,7 +48,8 @@
 .sectionActive {
   transform: scale(1);
   opacity: 1;
-  transition: all 500ms ease-out;
+  transition: opacity 500ms, transform 500ms;
+  transition-timing-function:  ease-out;
 }
 
 .section-text {
