@@ -202,7 +202,6 @@ class Header extends React.Component {
       clicked,
     } = this.state;
 
-
     const { sliderState } = this.props;
     if (sliderState) {
       sliderClass = 'link-component-visable';
@@ -218,13 +217,16 @@ class Header extends React.Component {
         transform: "translateY(0) rotate3d(1, 0, 0, 0)",
         opacity: "1",
       };
+      sliderClass = 'link-component-visable';
+    }
+
+    if (backArr) {
       animationStartLogo = {
         opacity: "1",
         transform: "translate3d(100vw, 0, 0) rotate(0deg)",
-        transitionDelay: '500ms',
+        transitionDelay: '400ms',
         pointerEvents: 'none'
       };
-      sliderClass = 'link-component-visable';
     }
 
     return (
@@ -238,7 +240,7 @@ class Header extends React.Component {
                 01
             </h1>
               <div className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
-                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+                <h1>{'<'}</h1>
               </div>
             </div>
             <Link
@@ -258,7 +260,7 @@ class Header extends React.Component {
                 02
             </h1>
               <div className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
-                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+                <h1>{"<"}</h1>
               </div>
             </div>
             <Link
@@ -279,7 +281,7 @@ class Header extends React.Component {
                 03
             </h1>
               <div className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
-                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+                <h1>{"<"}</h1>
               </div>
             </div>
             <Link
@@ -300,7 +302,7 @@ class Header extends React.Component {
                 04
             </h1>
               <div className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
-                <h1 style={{ color: 'royalblue' }} >{"<"}</h1>
+                <h1>{"<"}</h1>
               </div>
             </div>
             <Link
