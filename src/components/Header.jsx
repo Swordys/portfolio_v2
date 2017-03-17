@@ -188,10 +188,13 @@ class Header extends React.Component {
   }
 
   render() {
-    let showLogo = '';
+
     let sliderClass = '';
-    let animationStart = {};
-    let animationStartLogo = {};
+    let activeLink = '';
+    let activeLogo = '';
+    const svgLink = "../styles/svg/logo.svg";
+    const { sliderState } = this.props;
+
     const {
       hideClassAbout,
       hideClassProjects,
@@ -202,32 +205,13 @@ class Header extends React.Component {
       clicked,
     } = this.state;
 
-    const { sliderState } = this.props;
-    if (sliderState) {
-      sliderClass = 'link-component-visable';
 
-      animationStart = {
-        transform: "translateY(0) rotate3d(1, 0, 0, 0)",
-        opacity: "1",
-      };
+    if (sliderState || clicked) {
       sliderClass = 'link-component-visable';
-    }
-    if (clicked) {
-      animationStart = {
-        transform: "translateY(0) rotate3d(1, 0, 0, 0)",
-        opacity: "1",
-      };
-      sliderClass = 'link-component-visable';
+      activeLink = "linkTextActive";
     }
 
-    if (backArr) {
-      animationStartLogo = {
-        opacity: "1",
-        transform: "translate3d(100vw, 0, 0) rotate(0deg)",
-        transitionDelay: '400ms',
-        pointerEvents: 'none'
-      };
-    }
+    backArr ? activeLogo = "logoActive" : "";
 
     return (
       <div className="header-wrap">
@@ -244,12 +228,12 @@ class Header extends React.Component {
               </div>
             </div>
             <Link
-              style={animationStart}
+              className={activeLink}
               id="about"
               to="about">about
             </Link>
-            <div style={animationStartLogo} className={`logo`}>
-              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            <div className={`logo ${activeLogo}`}>
+              <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -264,12 +248,12 @@ class Header extends React.Component {
               </div>
             </div>
             <Link
-              style={animationStart}
+              className={activeLink}
               id="projects"
               to="projects">projects
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
-              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            <div className={`logo ${activeLogo}`}>
+              <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -285,12 +269,12 @@ class Header extends React.Component {
               </div>
             </div>
             <Link
-              style={animationStart}
+              className={activeLink}
               id="skills"
               to="skills">skills
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
-              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            <div className={`logo ${activeLogo}`}>
+              <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -306,12 +290,12 @@ class Header extends React.Component {
               </div>
             </div>
             <Link
-              style={animationStart}
+              className={activeLink}
               id="contact"
               to="contact">contact
             </Link>
-            <div style={animationStartLogo} className={`logo ${showLogo}`}>
-              <img src="../styles/svg/logo.svg" alt="logo" className="logo-main" />
+            <div className={`logo ${activeLogo}`}>
+              <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
         </div>

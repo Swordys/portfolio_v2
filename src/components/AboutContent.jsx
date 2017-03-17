@@ -3,6 +3,7 @@ import { styles } from '../styles/aboutContent.css'; // eslint-disable-line no-u
 import { connect } from 'react-redux';
 
 class AboutContent extends React.Component {
+
   render() {
     const { aboutState } = this.props;
     let toggleCompo = '';

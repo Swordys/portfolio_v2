@@ -3,6 +3,7 @@ import { styles } from '../styles/skillsContent.css'; // eslint-disable-line no-
 import { connect } from 'react-redux';
 
 class SkillsContent extends React.Component {
+
   render() {
     const { skillsState } = this.props;
     let toggleClass = '';

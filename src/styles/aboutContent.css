@@ -37,12 +37,12 @@
   padding: 20px;
   border-left: 1px solid lightgrey;
   opacity: 0.01;
-  transform: translate3d(0, 25px, 0);
+  transform: scale(0.8);
   transform-origin: left;
   flex-shrink: 0;
   transition: transform 500ms, opacity 500ms;
   transition-delay: 100ms, 150ms;
-  transition-timing-function: ease-out;
+  transition-timing-function: cubic-bezier(.15, 1.03, .84, .95);;
 }
 
 .about-compo:first-child {
@@ -50,12 +50,12 @@
 }
 
 .about-compo-active {
-  transform: translate3d(0, 0, 0);
+  transform: scale(1);
   opacity: 1;
 }
 
 .about-compo:last-child {
-  transition-delay: 150ms;
+  transition-delay: 350ms;
 }
 
 .pic-wrap {
@@ -73,10 +73,11 @@
   background-image: url('../styles/img/photos5.jpg');
   background-size: cover;
   background-position: center center;
-  transform: scale(1.5);
-  transition: transform 400ms cubic-bezier(.15, 1.03, .84, .95);
-  transition-delay: 100ms;
+  transform: scale(0.9);
   padding: 15px;
+  transform-origin: center;
+  transition: transform 400ms cubic-bezier(.15, 1.03, .84, .95);
+  transition-delay: 300ms;
 }
 
 .about-picture-active {
@@ -92,7 +93,7 @@
   transform-origin: center;
   transition: transform 300ms, opacity 300ms;
   transition-timing-function: ease-out;
-  transition-delay: 300ms, 350ms;
+  transition-delay: 400ms, 350ms;
 }
 
 .about-frame-active {

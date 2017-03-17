@@ -33,33 +33,21 @@
   height: 100%;
   perspective: 5000px;
   background: #FDFDFD;
-  transition: opacity 450ms, transform 450ms;
-  transition-timing-function: cubic-bezier(.75, .28, .28, .84);
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
   position: relative;
-  transform: translate3d(-300px, 0, 0);
-  transform-origin: left;
+  transform: translate3d(-200px, 0, 0);
   opacity: 0;
   pointer-events: none;
-}
-
-.link-component::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: #FDFDFD;
-  border-bottom: 1px solid lightgray;
-  position: absolute;
-  top: 0;
-  right: -100%;
 }
 
 .link-component-visable {
   transform: translate3d(0, 0, 0);
   transform-origin: top left;
-  opacity: 1;
   pointer-events: all;
+  opacity: 1;
+  transition: opacity 450ms, transform 450ms;
+  transition-timing-function: cubic-bezier(.75, .28, .28, .84);
 }
 
 .link-component-visable:first-child {
@@ -84,7 +72,17 @@
   font-size: 2vh;
   font-family: sans-serif;
   margin: 10px;
-  transition: transform 0.3s ease-out;
+}
+
+.link-component::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #FDFDFD;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  top: 0;
+  right: -100%;
 }
 
 .hide-component {
@@ -99,7 +97,6 @@
 .activeAbout {
   transform: scale(0.5);
   transform-origin: top left;
-  opacity: 1;
 }
 
 
@@ -108,8 +105,6 @@
 .activeProjects {
   transform: scale(0.5) translate3d(0, -50vh, 0);
   transform-origin: top left;
-  transition-duration: 500ms;
-  opacity: 1;
 }
 
 
@@ -118,7 +113,6 @@
 .activeSkills {
   transform: scale(0.5) translate3d(0, 50vh, 0);
   transform-origin: bottom left;
-  opacity: 1;
 }
 
 
@@ -127,7 +121,6 @@
 .activeContact {
   transform: scale(0.5);
   transform-origin: bottom left;
-  opacity: 1;
 }
 
 
@@ -139,13 +132,18 @@
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  transition: opacity 500ms, transform 500ms;
-  transition-timing-function: ease-out;
   opacity: 0;
   transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   cursor: pointer;
   margin-left: 2vh;
+}
+
+a.linkTextActive {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
+  transition: opacity 500ms, transform 500ms;
+  transition-timing-function: ease-out;
 }
 
 .logo {
@@ -158,12 +156,18 @@
   transform: translate3d(105vw, 0, 0) rotate(25deg);
   transform-origin: right;
   cursor: pointer;
-  transition: transform 400ms, opacity 400ms;
-  transition-timing-function: ease-out;
 }
 
 .logo-main {
   height: 10vh;
+}
+
+.logoActive {
+  opacity: 1;
+  transform: translate3d(100vw, 0, 0) rotate(0deg);
+  transition: transform 400ms, opacity 400ms;
+  transition-delay: 400ms;
+  transition-timing-function: ease-out;
 }
 
 .link-component h1 {
@@ -231,27 +235,27 @@
 
 /*ABOUT*/
 
-.link-component:first-child a {
+a#about {
   transition-delay: 250ms;
 }
 
 
 /*PROJECTS*/
 
-.link-component:nth-child(2) a {
+a#projects {
   transition-delay: 350ms;
 }
 
 
 /*SKILLS*/
 
-.link-component:nth-child(3) a {
+a#skills {
   transition-delay: 450ms;
 }
 
 
 /*CONTACT*/
 
-.link-component:last-child a {
+a#contact {
   transition-delay: 550ms;
 }

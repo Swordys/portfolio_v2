@@ -69,13 +69,13 @@
 
 .contact-section:first-child::after {
   content: "";
-  width: 2vh;
+  width: 1vh;
   height: 100%;
   background: royalblue;
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translateX(-1vh);
+  transform: translateX(-0.5vh);
   transition: transform 250ms ease-out;
 }
 
@@ -89,13 +89,13 @@
 
 .contact-section:nth-child(2)::after {
   content: "";
-  width: 2vh;
+  width: 1vh;
   height: 100%;
   background: #03A9F4;
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translateX(-1vh);
+  transform: translateX(-0.5vh);
   transition: transform 250ms ease-out;
 }
 
@@ -109,13 +109,13 @@
 
 .contact-section:nth-child(3)::after {
   content: "";
-  width: 2vh;
+  width: 1vh;
   height: 100%;
   background: #CDDC39;
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translateX(-1vh);
+  transform: translateX(-0.5vh);
   transition: transform 250ms ease-out;
 }
 
@@ -129,13 +129,13 @@
 
 .contact-section:last-child::after {
   content: "";
-  width: 2vh;
+  width: 1vh;
   height: 100%;
   background: #F44336;
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translateX(-1vh);
+  transform: translateX(-0.5vh);
   transition: transform 250ms ease-out;
 }
 

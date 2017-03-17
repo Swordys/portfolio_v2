@@ -3,6 +3,7 @@ import { styles } from '../styles/contactContent.css'; // eslint-disable-line no
 import { connect } from 'react-redux';
 
 class ContactContent extends React.Component {
+
   render() {
     const { contactState } = this.props;
     let sectionState = '';
