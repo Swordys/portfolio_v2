@@ -3,26 +3,13 @@
   height: 87.7vh;
   position: absolute;
   font-family: 'ThickFont';
-  bottom: 0;
   left: 0;
+  top: 0;
   background: #f9f9f9;
-  padding: 15px;
-  pointer-events: none;
   overflow-y: hidden;
   perspective: 5000px;
-  transform: scale(0.8);
   transform-origin: top;
-  transition: opacity 500ms, transform 500ms;
-  transition-timing-function: cubic-bezier(.83, .22, .47, .89);
-  transition-delay: 50ms;
   border-bottom: 1px solid lightgray;
-  opacity: 0;
-}
-
-.skillsActive {
-  opacity: 1;
-  transform: scale(1) translate3d(0, -12.3vh, 0);
-  pointer-events: all;
 }
 
 .skills-container {

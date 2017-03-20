@@ -9,23 +9,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transform: scale(0.8);
-  opacity: 0.01;
-  pointer-events: none;
   overflow-y: hidden;
   border-top: 1px solid lightgray;
   perspective: 5000px;
   transform-origin: bottom;
-  transition: transform 500ms, opacity 500ms;
+  transition: transform 300ms;
   transition-timing-function: cubic-bezier(.83, .22, .47, .89);
-  transition-delay: 100ms, 150ms;
 }
 
-.aboutActive {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: all;
-}
 
 .about-compo {
   height: 100%;
@@ -36,26 +27,15 @@
   align-items: center;
   padding: 20px;
   border-left: 1px solid lightgrey;
-  opacity: 0.01;
-  transform: scale(0.8);
+  opacity: 1;
   transform-origin: left;
   flex-shrink: 0;
-  transition: transform 500ms, opacity 500ms;
-  transition-delay: 100ms, 150ms;
-  transition-timing-function: cubic-bezier(.15, 1.03, .84, .95);;
+  /*transition: transform 500ms, opacity 500ms;
+  transition-timing-function: cubic-bezier(.15, 1.03, .84, .95);*/
 }
 
 .about-compo:first-child {
   border: 0;
-}
-
-.about-compo-active {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.about-compo:last-child {
-  transition-delay: 350ms;
 }
 
 .pic-wrap {
@@ -73,33 +53,20 @@
   background-image: url('../styles/img/photos5.jpg');
   background-size: cover;
   background-position: center center;
-  transform: scale(0.9);
   padding: 15px;
-  transform-origin: center;
-  transition: transform 400ms cubic-bezier(.15, 1.03, .84, .95);
-  transition-delay: 300ms;
-}
-
-.about-picture-active {
-  transform: scale(1);
+  /*transform-origin: center;
+  transition: transform 400ms cubic-bezier(.15, 1.03, .84, .95);*/
 }
 
 .about-frame {
   height: 100%;
   width: 100%;
   border: 1px solid #f9f9f9;
-  transform: scale(0.8);
-  opacity: 0.01;
   transform-origin: center;
-  transition: transform 300ms, opacity 300ms;
-  transition-timing-function: ease-out;
-  transition-delay: 400ms, 350ms;
+  /*transition: transform 300ms, opacity 300ms;
+  transition-timing-function: ease-out;*/
 }
 
-.about-frame-active {
-  opacity: 1;
-  transform: scale(1);
-}
 
 .about-text {
   height: 100%;

@@ -7,7 +7,12 @@
     "development": {
       "presets": [
         "latest",
-        "react-hmre"
+        "react-hmre",
+        "stage-0"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
       ]
     },
     "production": {
@@ -20,7 +25,9 @@
       ],
       "plugins": [
         "transform-react-constant-elements",
-        "transform-react-remove-prop-types"
+        "transform-react-remove-prop-types",
+        "transform-class-properties",
+        "transform-decorators-legacy"
       ]
     },
     "test": {

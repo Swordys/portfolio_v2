@@ -2,8 +2,6 @@ import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import * as Actions from '../actions/Actions.jsx';
-
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,10 +23,6 @@ class Header extends React.Component {
     const hideClass = 'hide-component';
     const {
       locationState,
-      toggleAbout,
-      toggleProject,
-      toggleSkills,
-      toggleContact,
     } = this.props;
 
 
@@ -46,10 +40,6 @@ class Header extends React.Component {
         hideClassAbout: 'activeAbout',
         backArr: 'back-showing-a',
       });
-      toggleAbout(true);
-      toggleProject(false);
-      toggleSkills(false);
-      toggleContact(false);
     }
 
     if (locationState === '/projects') {
@@ -60,10 +50,6 @@ class Header extends React.Component {
         hideClassProjects: 'activeProjects',
         backArr: 'back-showing-b',
       });
-      toggleProject(true);
-      toggleSkills(false);
-      toggleContact(false);
-      toggleAbout(false);
     }
 
     if (locationState === '/skills') {
@@ -75,10 +61,6 @@ class Header extends React.Component {
         linkWrap: 'reverseFlex',
         backArr: 'back-showing-c',
       });
-      toggleSkills(true);
-      toggleContact(false);
-      toggleAbout(false);
-      toggleProject(false);
     }
 
     if (locationState === '/contact') {
@@ -90,10 +72,6 @@ class Header extends React.Component {
         linkWrap: 'reverseFlex',
         backArr: 'back-showing-d',
       });
-      toggleContact(true);
-      toggleAbout(false);
-      toggleProject(false);
-      toggleSkills(false);
     }
   }
 
@@ -106,12 +84,7 @@ class Header extends React.Component {
     const value = e.target.id;
 
     const hideClass = 'hide-component';
-    const {
-      toggleAbout,
-      toggleProject,
-      toggleSkills,
-      toggleContact,
-    } = this.props;
+    this.props.router.push(value);
 
 
     if (value === 'about') {
@@ -123,7 +96,6 @@ class Header extends React.Component {
         backArr: 'back-showing-a',
         clicked: true,
       });
-      toggleAbout(true);
     }
 
     if (value === 'projects') {
@@ -135,7 +107,6 @@ class Header extends React.Component {
         clicked: true,
         backArr: 'back-showing-b',
       });
-      toggleProject(true);
     }
 
     if (value === 'skills') {
@@ -148,7 +119,6 @@ class Header extends React.Component {
         clicked: true,
         backArr: 'back-showing-c',
       });
-      toggleSkills(true);
     }
 
     if (value === 'contact') {
@@ -161,21 +131,10 @@ class Header extends React.Component {
         clicked: true,
         backArr: 'back-showing-d',
       });
-      toggleContact(true);
     }
   }
 
   handleBackToMenu() {
-    const {
-      toggleAbout,
-      toggleProject,
-      toggleSkills,
-      toggleContact,
-    } = this.props;
-    toggleContact(false);
-    toggleAbout(false);
-    toggleProject(false);
-    toggleSkills(false);
     this.setState({
       hideClassContact: '',
       hideClassProjects: '',
@@ -194,7 +153,6 @@ class Header extends React.Component {
     let activeLogo = '';
     const svgLink = "../styles/svg/logo.svg";
     const { sliderState } = this.props;
-
     const {
       hideClassAbout,
       hideClassProjects,
@@ -230,7 +188,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="about"
-              to="about">about
+            >about
             </Link>
             <div className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
@@ -250,7 +208,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="projects"
-              to="projects">projects
+            >projects
             </Link>
             <div className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
@@ -271,7 +229,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="skills"
-              to="skills">skills
+            >skills
             </Link>
             <div className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
@@ -292,7 +250,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="contact"
-              to="contact">contact
+            >contact
             </Link>
             <div className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
@@ -306,10 +264,6 @@ class Header extends React.Component {
 
 
 Header.propTypes = {
-  toggleAbout: PropTypes.func,
-  toggleProject: PropTypes.func,
-  toggleSkills: PropTypes.func,
-  toggleContact: PropTypes.func,
   sliderState: PropTypes.bool,
   locationState: PropTypes.string,
 };
@@ -320,19 +274,4 @@ const mapStateToProps = (state) => ({
   routes: state.routing
 });
 
-const mapDispatchToProps = dispatch => ({
-  toggleAbout: (value) => {
-    dispatch(Actions.toggleAbout(value));
-  },
-  toggleProject: (value) => {
-    dispatch(Actions.toggleProject(value));
-  },
-  toggleSkills: (value) => {
-    dispatch(Actions.toggleSkills(value));
-  },
-  toggleContact: (value) => {
-    dispatch(Actions.toggleContact(value));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

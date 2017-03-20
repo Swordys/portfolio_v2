@@ -5,7 +5,7 @@ import styles from '../styles/Menu.css'; // eslint-disable-line no-unused-vars
 
 class Menu extends React.Component {
   render() {
-    const {toggleSlide} = this.props;
+    const { toggleSlide } = this.props;
     return (
       <div onClick={() => toggleSlide(true)} className="sideMenu-wrap">
       </div>
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(() => { return {}; }, mapDispatchToProps)(Menu);
+export default connect(null, mapDispatchToProps)(Menu);

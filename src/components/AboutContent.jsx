@@ -1,31 +1,18 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import { styles } from '../styles/aboutContent.css'; // eslint-disable-line no-unused-vars
-import { connect } from 'react-redux';
 
-class AboutContent extends React.Component {
-
+class AboutContent extends Component {
   render() {
-    const { aboutState } = this.props;
-    let toggleCompo = '';
-    let toggleClass = '';
-    let togglePic = '';
-    let toggleFrame = '';
-    if (aboutState) {
-      toggleCompo = 'about-compo-active';
-      toggleClass = 'aboutActive';
-      togglePic = 'about-picture-active';
-      toggleFrame = 'about-frame-active';
-    }
     return (
-      <div className={`about-content ${toggleClass}`}>
-        <div className={`about-compo ${toggleCompo}`}>
+      <div className="about-content">
+        <div className="about-compo">
           <div className="pic-wrap">
-            <div className={`about-picture ${togglePic}`}>
-              <div className={`about-frame ${toggleFrame}`} />
+            <div className="about-picture">
+              <div className="about-frame" />
             </div>
           </div>
         </div>
-        <div className={`about-compo ${toggleCompo}`}>
+        <div className="about-compo">
           <div className="about-text">
             <div className="text-inner-wrap">
               <h2 className="hi">who ?</h2>
@@ -40,12 +27,4 @@ class AboutContent extends React.Component {
   }
 }
 
-AboutContent.propTypes = {
-  aboutState: PropTypes.bool,
-};
-
-const mapStateToProps = state => ({
-  aboutState: state.aboutState,
-});
-
-export default connect(mapStateToProps)(AboutContent);
+export default AboutContent;

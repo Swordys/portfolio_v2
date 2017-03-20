@@ -1,21 +1,12 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import { styles } from '../styles/contactContent.css'; // eslint-disable-line no-unused-vars
-import { connect } from 'react-redux';
 
-class ContactContent extends React.Component {
-
+class ContactContent extends Component {
   render() {
-    const { contactState } = this.props;
-    let sectionState = '';
-    let toggleClass = '';
-    if (contactState) {
-      toggleClass = 'contactActive';
-      sectionState = 'sectionActive';
-    }
     return (
-      <div className={`contact-content ${toggleClass}`}>
+      <div className={`contact-content`}>
         <div className="contact-wrap">
-          <div className={`contact-section ${sectionState}`}>
+          <div className={`contact-section`}>
             <div className="section-text">
               <div style={{ display: 'flex' }}>
                 <h1 className="section-count" style={{ paddingRight: '2vh', color: 'gray' }}>01</h1>
@@ -27,7 +18,7 @@ class ContactContent extends React.Component {
                 </span>
             </div>
           </div>
-          <div className={`contact-section ${sectionState}`}>
+          <div className={`contact-section`}>
             <div className="section-text">
               <div style={{ display: 'flex' }}>
                 <h1 style={{ paddingRight: '2vh', color: 'gray' }}>02</h1>
@@ -38,7 +29,7 @@ class ContactContent extends React.Component {
                 </span>
             </div>
           </div>
-          <div className={`contact-section ${sectionState}`}>
+          <div className={`contact-section`}>
             <div className="section-text">
               <div style={{ display: 'flex' }}>
                 <h1 style={{ paddingRight: '2vh', color: 'gray' }}>03</h1>
@@ -50,7 +41,7 @@ class ContactContent extends React.Component {
                  </span>
             </div>
           </div>
-          <div className={`contact-section ${sectionState}`}>
+          <div className={`contact-section`}>
             <div className="section-text">
               <div style={{ display: 'flex' }}>
                 <h1 style={{ paddingRight: '2vh', color: 'gray' }}>04</h1>
@@ -67,12 +58,4 @@ class ContactContent extends React.Component {
   }
 }
 
-ContactContent.propTypes = {
-  contactState: PropTypes.bool,
-};
-
-const mapStateToProps = state => ({
-  contactState: state.contactState,
-});
-
-export default connect(mapStateToProps)(ContactContent);
+export default ContactContent;

@@ -1,29 +1,34 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react';
 import { styles } from '../styles/mainWrap.css'; // eslint-disable-line no-unused-vars
+import { transGroup } from '../styles/transGroup.css'; // eslint-disable-line no-unused-vars
 import Header from './Header.jsx';
 import Menu from './Menu.jsx';
-import AboutContent from './AboutContent.jsx';
-import ProjectContent from './ProjectContent.jsx';
-import SkillsContent from './SkillsContent.jsx';
-import ContactContent from './ContactContent.jsx';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class App extends React.Component {
+class App extends Component {
+
+  static propTypes = {
+    children: PropTypes.object,
+  }
+
   render() {
+    const { children, router } = this.props;
     return (
       <div className="main-wrap">
         <div className="main-menu-wrap">
-          <Header router={this.props.router} />
+          <Header router={router} />
           <Menu />
         </div>
-        <AboutContent />
-        <ProjectContent />
-        <SkillsContent />
-        <ContactContent />
+        <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          {children}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
 }
 
 
-export default connect()(App);
+export default App;
