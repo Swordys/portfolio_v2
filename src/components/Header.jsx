@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 class Header extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +16,6 @@ class Header extends React.Component {
       hideClassContact: '',
       backArr: '',
     };
-    this.handleToggle = this.handleToggle.bind(this);
     this.handleBackToMenu = this.handleBackToMenu.bind(this);
   }
 
@@ -24,7 +24,6 @@ class Header extends React.Component {
     const {
       locationState,
     } = this.props;
-
 
     if (locationState !== '/') {
       this.setState({
@@ -75,62 +74,54 @@ class Header extends React.Component {
     }
   }
 
-  handleToggle(e) {
-
-    if (this.state.backArr) {
-      this.handleBackToMenu();
-      return;
-    }
-    const value = e.target.id;
-
+  componentWillReceiveProps(nextProps, prevProps) {
     const hideClass = 'hide-component';
-    this.props.router.push(value);
-
-
-    if (value === 'about') {
-      this.setState({
-        hideClassContact: hideClass,
-        hideClassProjects: hideClass,
-        hideClassSkills: hideClass,
-        hideClassAbout: 'activeAbout',
-        backArr: 'back-showing-a',
-        clicked: true,
-      });
-    }
-
-    if (value === 'projects') {
-      this.setState({
-        hideClassContact: hideClass,
-        hideClassAbout: hideClass,
-        hideClassSkills: hideClass,
-        hideClassProjects: 'activeProjects',
-        clicked: true,
-        backArr: 'back-showing-b',
-      });
-    }
-
-    if (value === 'skills') {
-      this.setState({
-        hideClassContact: hideClass,
-        hideClassAbout: hideClass,
-        hideClassProjects: hideClass,
-        hideClassSkills: 'activeSkills',
-        linkWrap: 'reverseFlex',
-        clicked: true,
-        backArr: 'back-showing-c',
-      });
-    }
-
-    if (value === 'contact') {
-      this.setState({
-        hideClassSkills: hideClass,
-        hideClassAbout: hideClass,
-        hideClassProjects: hideClass,
-        hideClassContact: 'activeContact',
-        linkWrap: 'reverseFlex',
-        clicked: true,
-        backArr: 'back-showing-d',
-      });
+    if (nextProps.locationState !== prevProps.locationState) {
+      nextProps.locationState === '/' && this.handleBackToMenu();
+      switch (nextProps.locationState) {
+        case '/about':
+        case 'about':
+          this.setState({
+            hideClassContact: hideClass,
+            hideClassProjects: hideClass,
+            hideClassSkills: hideClass,
+            hideClassAbout: 'activeAbout',
+            backArr: 'back-showing-a',
+          });
+          break;
+        case '/projects':
+        case 'projects':
+          this.setState({
+            hideClassContact: hideClass,
+            hideClassAbout: hideClass,
+            hideClassSkills: hideClass,
+            hideClassProjects: 'activeProjects',
+            backArr: 'back-showing-b',
+          });
+          break;
+        case '/skills':
+        case 'skills':
+          this.setState({
+            hideClassContact: hideClass,
+            hideClassAbout: hideClass,
+            hideClassProjects: hideClass,
+            hideClassSkills: 'activeSkills',
+            linkWrap: 'reverseFlex',
+            backArr: 'back-showing-c',
+          });
+          break;
+        case '/contact':
+        case 'contact':
+          this.setState({
+            hideClassSkills: hideClass,
+            hideClassAbout: hideClass,
+            hideClassProjects: hideClass,
+            hideClassContact: 'activeContact',
+            linkWrap: 'reverseFlex',
+            backArr: 'back-showing-d',
+          });
+          break;
+      }
     }
   }
 
@@ -140,10 +131,8 @@ class Header extends React.Component {
       hideClassProjects: '',
       hideClassSkills: '',
       hideClassAbout: '',
-      clicked: true,
       backArr: '',
     });
-    this.props.router.push('');
   }
 
   render() {
@@ -173,7 +162,7 @@ class Header extends React.Component {
 
     return (
       <div className="header-wrap">
-        <div onClick={this.handleToggle} className={`link-wrap ${linkWrap}`}>
+        <div className={`link-wrap ${linkWrap}`}>
           <div
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
@@ -188,6 +177,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="about"
+              to="about"
             >about
             </Link>
             <div className={`logo ${activeLogo}`}>
@@ -208,6 +198,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="projects"
+              to="projects"
             >projects
             </Link>
             <div className={`logo ${activeLogo}`}>
@@ -229,6 +220,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="skills"
+              to="skills"
             >skills
             </Link>
             <div className={`logo ${activeLogo}`}>
@@ -250,6 +242,7 @@ class Header extends React.Component {
             <Link
               className={activeLink}
               id="contact"
+              to="contact"
             >contact
             </Link>
             <div className={`logo ${activeLogo}`}>
@@ -271,7 +264,6 @@ Header.propTypes = {
 const mapStateToProps = (state) => ({
   locationState: state.locationState,
   sliderState: state.slideState,
-  routes: state.routing
 });
 
 export default connect(mapStateToProps)(Header);

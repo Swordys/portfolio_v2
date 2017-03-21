@@ -12,17 +12,17 @@ class App extends Component {
   }
 
   render() {
-    const { children, router } = this.props;
+    const { children } = this.props;
     return (
       <div className="main-wrap">
         <div className="main-menu-wrap">
-          <Header router={router} />
+          <Header />
           <Menu />
         </div>
         <ReactCSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+          transitionLeaveTimeout={500}>
           {children}
         </ReactCSSTransitionGroup>
       </div>
