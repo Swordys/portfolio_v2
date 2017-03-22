@@ -21,6 +21,8 @@
   justify-content: flex-start;
   perspective: 1000em;
   overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .reverseFlex {
@@ -37,17 +39,19 @@
   box-sizing: border-box;
   position: relative;
   transform: translate3d(-200px, 0, 0);
-  opacity: 0;
+  opacity: 0.01;
   pointer-events: none;
+  will-change: transform;
 }
 
 .link-component-visable {
   transform: translate3d(0, 0, 0);
   transform-origin: top left;
   pointer-events: all;
-  opacity: 1;
+  opacity: 0.99;
   transition: opacity 450ms, transform 450ms;
   transition-timing-function: cubic-bezier(.75, .28, .28, .84);
+  will-change: transform;
 }
 
 .link-component-visable:first-child {
@@ -83,10 +87,12 @@
   position: absolute;
   top: 0;
   right: -100%;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .hide-component {
-  opacity: 0;
+  opacity: 0.01;
   transform: translate3d(-100px, 0, 0);
   pointer-events: none;
 }
@@ -95,7 +101,8 @@
 /*ABOUT - TAB*/
 
 .activeAbout {
-  transform: scale(0.5);
+  transform: scale(0.5) translateZ(0);
+  will-change: transform;
   transform-origin: top left;
 }
 
@@ -119,7 +126,8 @@
 /*CONTACT - TAB*/
 
 .activeContact {
-  transform: scale(0.5);
+  transform: scale(0.5) translateZ(0);
+  will-change: transform;
   transform-origin: bottom left;
 }
 
@@ -132,7 +140,7 @@
   color: #303030;
   font-size: 9vh;
   font-family: 'ThickFont';
-  opacity: 0;
+  opacity: 0.01;
   transform: translate3d(0, -25px, 0) rotate3d(1, 0, 0, 45deg);
   transform-style: preserve-3d;
   cursor: pointer;
@@ -140,7 +148,7 @@
 }
 
 a.linkTextActive {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
   transition: opacity 500ms, transform 500ms;
   transition-timing-function: ease-out;
@@ -150,7 +158,7 @@ a.linkTextActive {
   position: absolute;
   right: 0;
   z-index: 100;
-  opacity: 0;
+  opacity: 0.01;
   margin-right: 5vh;
   top: 30%;
   transform: translate3d(105vw, 0, 0) rotate(25deg);
@@ -163,7 +171,7 @@ a.linkTextActive {
 }
 
 .logoActive {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(100vw, 0, 0) rotate(0deg);
   transition: transform 400ms, opacity 400ms;
   transition-delay: 400ms;
@@ -180,7 +188,7 @@ a.linkTextActive {
 }
 
 .listNumHide {
-  opacity: 0;
+  opacity: 0.01;
   transform: translate3d(0, -100px, 0);
 }
 
@@ -209,25 +217,25 @@ a.linkTextActive {
 }
 
 .back-showing-a {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(0, 0, 0);
   transition-delay: 100ms;
 }
 
 .back-showing-b {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(0, 0, 0);
   transition-delay: 200ms;
 }
 
 .back-showing-c {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(0, 0, 0);
   transition-delay: 200ms;
 }
 
 .back-showing-d {
-  opacity: 1;
+  opacity: 0.99;
   transform: translate3d(0, 0, 0);
   transition-delay: 100ms;
 }

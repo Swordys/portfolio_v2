@@ -10,6 +10,7 @@
   perspective: 5000px;
   transform-origin: top;
   border-bottom: 1px solid lightgray;
+  will-change: transform;
 }
 
 .skills-container {

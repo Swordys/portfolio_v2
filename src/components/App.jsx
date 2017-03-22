@@ -21,8 +21,9 @@ class App extends Component {
         </div>
         <ReactCSSTransitionGroup
           transitionName="example"
+          component="div"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
+          transitionLeaveTimeout={300}>
           {children}
         </ReactCSSTransitionGroup>
       </div>

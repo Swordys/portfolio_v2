@@ -15,6 +15,7 @@
   transform-origin: bottom;
   transition: transform 300ms;
   transition-timing-function: cubic-bezier(.83, .22, .47, .89);
+  will-change: transform;
 }
 
 
@@ -27,7 +28,7 @@
   align-items: center;
   padding: 20px;
   border-left: 1px solid lightgrey;
-  opacity: 1;
+  opacity: 0.99;
   transform-origin: left;
   flex-shrink: 0;
   /*transition: transform 500ms, opacity 500ms;

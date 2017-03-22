@@ -1,22 +1,27 @@
 .example-enter {
   opacity: 0.01;
-  transform: scale(0.8);
+  transform: scale(0.8) translateZ(0);
+  will-change: transform;
 }
 
 .example-enter.example-enter-active {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0.99;
+  transform: scale(1) translateZ(0);
   transition: opacity 500ms, transform 500ms;
   transition-timing-function: ease-out;
+  will-change: transform;
 }
 
 .example-leave {
-  opacity: 1;
+  opacity: 0.99;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  transform: scale(0.8);
+  transform: scale(0.8) translateZ(0);
   transition: opacity 300ms, transform 300ms;
   transition-timing-function: ease-out;
+  will-change: transform;
 }

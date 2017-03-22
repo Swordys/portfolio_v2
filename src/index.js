@@ -20,10 +20,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" router={Router} component={App}>
-        <Route path="about" component={About} />
-        <Route path="projects" component={Projects} />
-        <Route path="skills" component={Skills} />
-        <Route path="contact" component={Contact} />
+        <Route path="about" key="about" component={About} />
+        <Route path="projects" key="projects" component={Projects} />
+        <Route path="skills" key="skills" component={Skills} />
+        <Route path="contact" key="contact" component={Contact} />
       </Route>
     </Router>
   </Provider>,
