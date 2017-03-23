@@ -92,8 +92,9 @@
 }
 
 .hide-component {
-  opacity: 0.01;
+  opacity: 0;
   transform: translate3d(-100px, 0, 0);
+  will-change: transform;
   pointer-events: none;
 }
 

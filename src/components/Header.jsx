@@ -136,7 +136,6 @@ class Header extends React.Component {
   }
 
   render() {
-
     let sliderClass = '';
     let activeLink = '';
     let activeLogo = '';
@@ -170,7 +169,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-a' && 'listNumHide'}>
                 01
             </h1>
-              <div className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
+              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
                 <h1>{'<'}</h1>
               </div>
             </div>
