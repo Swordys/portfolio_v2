@@ -9,12 +9,11 @@ import Projects from './components/ProjectContent.jsx';
 import Skills from './components/SkillsContent.jsx';
 import Contact from './components/ContactContent.jsx';
 import { styles } from './styles/global.css'; // eslint-disable-line no-unused-vars
-import { syncHistoryWithStore } from 'react-router-redux';
 import { currentLocationState } from './actions/Actions.jsx';
-const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
-history.listen(location => store.dispatch(currentLocationState(location.pathname)));
 
+browserHistory.listen(location => store.dispatch(currentLocationState(location.pathname)));
+
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

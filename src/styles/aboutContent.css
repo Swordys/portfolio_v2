@@ -1,20 +1,13 @@
 .about-content {
   width: 100%;
-  height: 87.7vh;
+  height: 87.5vh;
   position: absolute;
   font-family: 'ThickFont';
   bottom: 0;
   left: 0;
-  background: #f9f9f9;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-y: hidden;
-  border-top: 1px solid lightgray;
-  perspective: 5000px;
-  transform-origin: bottom;
-  transition: transform 300ms;
-  transition-timing-function: cubic-bezier(.83, .22, .47, .89);
+  /*transition: transform 400ms;
+  transition-timing-function: cubic-bezier(.83, .22, .47, .89);*/
   will-change: transform;
 }
 
@@ -26,17 +19,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   border-left: 1px solid lightgrey;
-  opacity: 0.99;
-  transform-origin: left;
+  opacity: 1;
   flex-shrink: 0;
+  /*transform-origin: left;*/
   /*transition: transform 500ms, opacity 500ms;
   transition-timing-function: cubic-bezier(.15, 1.03, .84, .95);*/
 }
 
 .about-compo:first-child {
-  border: 0;
+  border: none;
 }
 
 .pic-wrap {
@@ -48,9 +40,6 @@
 .about-picture {
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url('../styles/img/photos5.jpg');
   background-size: cover;
   background-position: center center;
@@ -63,7 +52,7 @@
   height: 100%;
   width: 100%;
   border: 1px solid #f9f9f9;
-  transform-origin: center;
+  /*transform-origin: center;*/
   /*transition: transform 300ms, opacity 300ms;
   transition-timing-function: ease-out;*/
 }

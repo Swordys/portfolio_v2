@@ -6,10 +6,9 @@ class ProjectContent extends Component {
     return (
       <div className={`project-content`}>
         <div className="project-container">
-          <div key="#1" className={`project-file`}>
+          <div key="#1" className="project-file">
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -19,8 +18,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#2" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -30,8 +28,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#3" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -41,8 +38,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#4" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -52,8 +48,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#5" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -63,8 +58,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#6" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -74,8 +68,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#7" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -85,8 +78,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#8" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -96,8 +88,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#9" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -107,8 +98,7 @@ class ProjectContent extends Component {
           </div>
           <div key="#10" className={`project-file`}>
             <div className="project-wrap">
-              <div className="file-pic">
-              </div>
+              <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
                   project description
@@ -123,3 +113,105 @@ class ProjectContent extends Component {
 }
 
 export default ProjectContent;
+
+
+          {/*<div key="#1" className="project-file">
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#2" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#3" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#4" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#5" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#6" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#7" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#8" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#9" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>
+          <div key="#10" className={`project-file`}>
+            <div className="project-wrap">
+              <div className="file-pic" />
+              <div className="file-info">
+                <span className="info-text">
+                  project description
+              </span>
+              </div>
+            </div>
+          </div>*/}

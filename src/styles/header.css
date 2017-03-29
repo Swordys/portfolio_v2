@@ -11,6 +11,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  will-change: transform;
 }
 
 .link-wrap {
@@ -22,7 +23,6 @@
   perspective: 1000em;
   overflow: hidden;
   transform: translateZ(0);
-  will-change: transform;
 }
 
 .reverseFlex {
@@ -41,7 +41,6 @@
   transform: translate3d(-200px, 0, 0);
   opacity: 0.01;
   pointer-events: none;
-  will-change: transform;
 }
 
 .link-component-visable {
@@ -51,7 +50,6 @@
   opacity: 0.99;
   transition: opacity 450ms, transform 450ms;
   transition-timing-function: cubic-bezier(.75, .28, .28, .84);
-  will-change: transform;
 }
 
 .link-component-visable:first-child {
@@ -88,7 +86,6 @@
   top: 0;
   right: -100%;
   transform: translateZ(0);
-  will-change: transform;
 }
 
 .hide-component {

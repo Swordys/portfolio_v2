@@ -1,7 +1,9 @@
 import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-vars
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
+import { toggleSlideMenu } from '../actions/Actions.jsx';
+
 
 class Header extends React.Component {
 
@@ -140,7 +142,7 @@ class Header extends React.Component {
     let activeLink = '';
     let activeLogo = '';
     const svgLink = "../styles/svg/logo.svg";
-    const { sliderState } = this.props;
+    const { sliderState, toggleSlideMenu } = this.props;
     const {
       hideClassAbout,
       hideClassProjects,
@@ -163,6 +165,7 @@ class Header extends React.Component {
       <div className="header-wrap">
         <div className={`link-wrap ${linkWrap}`}>
           <div
+            onClick={this.handleClick}
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
             <div className="list-num">
@@ -179,7 +182,10 @@ class Header extends React.Component {
               to="about"
             >about
             </Link>
-            <div className={`logo ${activeLogo}`}>
+            <div onClick={() => {
+              browserHistory.push('/');
+              toggleSlideMenu(false);
+            }} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -190,7 +196,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-b' && 'listNumHide'}>
                 02
             </h1>
-              <div className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
+              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -200,7 +206,10 @@ class Header extends React.Component {
               to="projects"
             >projects
             </Link>
-            <div className={`logo ${activeLogo}`}>
+            <div onClick={() => {
+              browserHistory.push('/');
+              toggleSlideMenu(false);
+            }} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -212,7 +221,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-c' && 'listNumHide'}>
                 03
             </h1>
-              <div className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
+              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -222,7 +231,10 @@ class Header extends React.Component {
               to="skills"
             >skills
             </Link>
-            <div className={`logo ${activeLogo}`}>
+            <div onClick={() => {
+              browserHistory.push('/');
+              toggleSlideMenu(false);
+            }} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -234,7 +246,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-d' && 'listNumHide'}>
                 04
             </h1>
-              <div className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
+              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -244,7 +256,10 @@ class Header extends React.Component {
               to="contact"
             >contact
             </Link>
-            <div className={`logo ${activeLogo}`}>
+            <div onClick={() => {
+              browserHistory.push('/');
+              toggleSlideMenu(false);
+            }} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -258,6 +273,7 @@ class Header extends React.Component {
 Header.propTypes = {
   sliderState: PropTypes.bool,
   locationState: PropTypes.string,
+  toggleSlideMenu: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -265,4 +281,10 @@ const mapStateToProps = (state) => ({
   sliderState: state.slideState,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+  toggleSlideMenu: value => {
+    dispatch(toggleSlideMenu(value));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

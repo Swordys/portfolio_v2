@@ -1,4 +1,4 @@
-export const currentLoactionReducer = (state = '', action) => {
+export const currentLoactionReducer = (state = '/', action) => {
   switch (action.type) {
     case 'CURRENT_LOCATION_SUCCESS':
       return action.location;
