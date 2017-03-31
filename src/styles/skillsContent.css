@@ -10,6 +10,18 @@
   perspective: 5000px;
   transform-origin: top;
   will-change: transform;
+  opacity: 0;
+  transform: translate3d(0, -10vh, 0);
+  transition: transform 400ms, opacity 450ms;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+}
+
+.skills-content-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  pointer-events: initial;
 }
 
 .skills-container {

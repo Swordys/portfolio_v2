@@ -9,9 +9,6 @@ import Projects from './components/ProjectContent.jsx';
 import Skills from './components/SkillsContent.jsx';
 import Contact from './components/ContactContent.jsx';
 import { styles } from './styles/global.css'; // eslint-disable-line no-unused-vars
-import { currentLocationState } from './actions/Actions.jsx';
-
-browserHistory.listen(location => store.dispatch(currentLocationState(location.pathname)));
 
 const store = configureStore();
 

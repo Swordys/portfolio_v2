@@ -6,11 +6,20 @@
   bottom: 0;
   left: 0;
   display: flex;
-  /*transition: transform 400ms;
-  transition-timing-function: cubic-bezier(.83, .22, .47, .89);*/
   will-change: transform;
+  opacity: 0;
+  transform: translate3d(0, 10vh, 0);
+  transition: transform 400ms, opacity 450ms;
+  transition-timing-function: ease-out;
+  pointer-events: none;
 }
 
+.about-content-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  pointer-events: initial;
+}
 
 .about-compo {
   height: 100%;
@@ -22,9 +31,6 @@
   border-left: 1px solid lightgrey;
   opacity: 1;
   flex-shrink: 0;
-  /*transform-origin: left;*/
-  /*transition: transform 500ms, opacity 500ms;
-  transition-timing-function: cubic-bezier(.15, 1.03, .84, .95);*/
 }
 
 .about-compo:first-child {
@@ -44,19 +50,13 @@
   background-size: cover;
   background-position: center center;
   padding: 15px;
-  /*transform-origin: center;
-  transition: transform 400ms cubic-bezier(.15, 1.03, .84, .95);*/
 }
 
 .about-frame {
   height: 100%;
   width: 100%;
   border: 1px solid #f9f9f9;
-  /*transform-origin: center;*/
-  /*transition: transform 300ms, opacity 300ms;
-  transition-timing-function: ease-out;*/
 }
-
 
 .about-text {
   height: 100%;
@@ -88,7 +88,7 @@
   font-size: 2vh;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media (max-width: 1000px) {
   .about-content {
     flex-direction: column;
     overflow-y: auto;

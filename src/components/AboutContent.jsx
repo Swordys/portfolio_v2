@@ -1,10 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { styles } from '../styles/aboutContent.css'; // eslint-disable-line no-unused-vars
 
 class AboutContent extends Component {
+
+  static propTypes = {
+    activeLocation: PropTypes.string,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      abCont: 'about-content'
+    };
+  }
+
+  componentWillMount() {
+    const { activeLocation } = this.props;
+    activeLocation === '/about' ?
+      this.setState({ abCont: 'about-content about-content-active' }) :
+      this.setState({ abCont: 'about-content' });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { activeLocation } = nextProps;
+    activeLocation === 'about' ?
+      this.setState({ abCont: 'about-content about-content-active' }) :
+      this.setState({ abCont: 'about-content' });
+  }
+
   render() {
+    const { abCont } = this.state;
     return (
-      <div className="about-content">
+      <div className={abCont}>
         <div className="about-compo">
           <div className="pic-wrap">
             <div className="about-picture">

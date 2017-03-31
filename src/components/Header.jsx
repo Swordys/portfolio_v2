@@ -1,6 +1,6 @@
 import { styles } from '../styles/header.css'; // eslint-disable-line no-unused-vars
 import React, { PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { toggleSlideMenu } from '../actions/Actions.jsx';
 
@@ -10,7 +10,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
       linkWrap: '',
       hideClassAbout: '',
       hideClassProjects: '',
@@ -19,21 +18,21 @@ class Header extends React.Component {
       backArr: '',
     };
     this.handleBackToMenu = this.handleBackToMenu.bind(this);
+    this.handleBackToStart = this.handleBackToStart.bind(this);
   }
 
   componentWillMount() {
     const hideClass = 'hide-component';
     const {
-      locationState,
+      activeLocation,
+      toggleSlideMenu
     } = this.props;
 
-    if (locationState !== '/') {
-      this.setState({
-        clicked: true,
-      });
+    if (activeLocation !== '/') {
+      toggleSlideMenu(true);
     }
 
-    if (locationState === '/about') {
+    if (activeLocation === '/about') {
       this.setState({
         hideClassContact: hideClass,
         hideClassProjects: hideClass,
@@ -43,7 +42,7 @@ class Header extends React.Component {
       });
     }
 
-    if (locationState === '/projects') {
+    if (activeLocation === '/projects') {
       this.setState({
         hideClassContact: hideClass,
         hideClassAbout: hideClass,
@@ -53,7 +52,7 @@ class Header extends React.Component {
       });
     }
 
-    if (locationState === '/skills') {
+    if (activeLocation === '/skills') {
       this.setState({
         hideClassContact: hideClass,
         hideClassAbout: hideClass,
@@ -64,7 +63,7 @@ class Header extends React.Component {
       });
     }
 
-    if (locationState === '/contact') {
+    if (activeLocation === '/contact') {
       this.setState({
         hideClassSkills: hideClass,
         hideClassAbout: hideClass,
@@ -76,54 +75,50 @@ class Header extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps, prevProps) {
+  componentWillReceiveProps(nextProps) {
     const hideClass = 'hide-component';
-    if (nextProps.locationState !== prevProps.locationState) {
-      nextProps.locationState === '/' && this.handleBackToMenu();
-      switch (nextProps.locationState) {
-        case '/about':
-        case 'about':
-          this.setState({
-            hideClassContact: hideClass,
-            hideClassProjects: hideClass,
-            hideClassSkills: hideClass,
-            hideClassAbout: 'activeAbout',
-            backArr: 'back-showing-a',
-          });
-          break;
-        case '/projects':
-        case 'projects':
-          this.setState({
-            hideClassContact: hideClass,
-            hideClassAbout: hideClass,
-            hideClassSkills: hideClass,
-            hideClassProjects: 'activeProjects',
-            backArr: 'back-showing-b',
-          });
-          break;
-        case '/skills':
-        case 'skills':
-          this.setState({
-            hideClassContact: hideClass,
-            hideClassAbout: hideClass,
-            hideClassProjects: hideClass,
-            hideClassSkills: 'activeSkills',
-            linkWrap: 'reverseFlex',
-            backArr: 'back-showing-c',
-          });
-          break;
-        case '/contact':
-        case 'contact':
-          this.setState({
-            hideClassSkills: hideClass,
-            hideClassAbout: hideClass,
-            hideClassProjects: hideClass,
-            hideClassContact: 'activeContact',
-            linkWrap: 'reverseFlex',
-            backArr: 'back-showing-d',
-          });
-          break;
-      }
+    const { activeLocation } = nextProps;
+    activeLocation === '/' && this.handleBackToMenu();
+
+    switch (activeLocation) {
+      case 'about':
+        this.setState({
+          hideClassContact: hideClass,
+          hideClassProjects: hideClass,
+          hideClassSkills: hideClass,
+          hideClassAbout: 'activeAbout',
+          backArr: 'back-showing-a',
+        });
+        return;
+      case 'projects':
+        this.setState({
+          hideClassContact: hideClass,
+          hideClassAbout: hideClass,
+          hideClassSkills: hideClass,
+          hideClassProjects: 'activeProjects',
+          backArr: 'back-showing-b',
+        });
+        return;
+      case 'skills':
+        this.setState({
+          hideClassContact: hideClass,
+          hideClassAbout: hideClass,
+          hideClassProjects: hideClass,
+          hideClassSkills: 'activeSkills',
+          linkWrap: 'reverseFlex',
+          backArr: 'back-showing-c',
+        });
+        return;
+      case 'contact':
+        this.setState({
+          hideClassSkills: hideClass,
+          hideClassAbout: hideClass,
+          hideClassProjects: hideClass,
+          hideClassContact: 'activeContact',
+          linkWrap: 'reverseFlex',
+          backArr: 'back-showing-d',
+        });
+        return;
     }
   }
 
@@ -137,12 +132,21 @@ class Header extends React.Component {
     });
   }
 
+  handleBackToStart() {
+    const { toggleSlideMenu, routeRemote } = this.props;
+    routeRemote.push('/');
+    toggleSlideMenu(false);
+    this.setState({
+      clicked: false
+    });
+  }
+
   render() {
     let sliderClass = '';
     let activeLink = '';
     let activeLogo = '';
     const svgLink = "../styles/svg/logo.svg";
-    const { sliderState, toggleSlideMenu } = this.props;
+    const { sliderState, routeRemote } = this.props;
     const {
       hideClassAbout,
       hideClassProjects,
@@ -150,11 +154,10 @@ class Header extends React.Component {
       hideClassContact,
       backArr,
       linkWrap,
-      clicked,
     } = this.state;
 
 
-    if (sliderState || clicked) {
+    if (sliderState) {
       sliderClass = 'link-component-visable';
       activeLink = "linkTextActive";
     }
@@ -165,14 +168,15 @@ class Header extends React.Component {
       <div className="header-wrap">
         <div className={`link-wrap ${linkWrap}`}>
           <div
-            onClick={this.handleClick}
             className={`link-component ${hideClassAbout} ${sliderClass}`}
             id="about">
             <div className="list-num">
               <h1 className={backArr === 'back-showing-a' && 'listNumHide'}>
                 01
             </h1>
-              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
+              <div
+                onClick={() => routeRemote.push("/")}
+                className={`backBtn ${hideClassAbout === 'activeAbout' && backArr}`} >
                 <h1>{'<'}</h1>
               </div>
             </div>
@@ -182,10 +186,7 @@ class Header extends React.Component {
               to="about"
             >about
             </Link>
-            <div onClick={() => {
-              browserHistory.push('/');
-              toggleSlideMenu(false);
-            }} className={`logo ${activeLogo}`}>
+            <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -196,7 +197,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-b' && 'listNumHide'}>
                 02
             </h1>
-              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
+              <div onClick={() => routeRemote.push("/")} className={`backBtn ${hideClassProjects === 'activeProjects' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -206,10 +207,7 @@ class Header extends React.Component {
               to="projects"
             >projects
             </Link>
-            <div onClick={() => {
-              browserHistory.push('/');
-              toggleSlideMenu(false);
-            }} className={`logo ${activeLogo}`}>
+            <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -221,7 +219,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-c' && 'listNumHide'}>
                 03
             </h1>
-              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
+              <div onClick={() => routeRemote.push("/")} className={`backBtn ${hideClassSkills === 'activeSkills' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -231,10 +229,7 @@ class Header extends React.Component {
               to="skills"
             >skills
             </Link>
-            <div onClick={() => {
-              browserHistory.push('/');
-              toggleSlideMenu(false);
-            }} className={`logo ${activeLogo}`}>
+            <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -246,7 +241,7 @@ class Header extends React.Component {
               <h1 className={backArr === 'back-showing-d' && 'listNumHide'}>
                 04
             </h1>
-              <div onClick={() => this.props.routerT.push("/")} className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
+              <div onClick={() => routeRemote.push("/")} className={`backBtn ${hideClassContact === 'activeContact' && backArr}`} >
                 <h1>{"<"}</h1>
               </div>
             </div>
@@ -256,10 +251,7 @@ class Header extends React.Component {
               to="contact"
             >contact
             </Link>
-            <div onClick={() => {
-              browserHistory.push('/');
-              toggleSlideMenu(false);
-            }} className={`logo ${activeLogo}`}>
+            <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
               <img src={svgLink} alt="logo" className="logo-main" />
             </div>
           </div>
@@ -271,13 +263,13 @@ class Header extends React.Component {
 
 
 Header.propTypes = {
+  activeLocation: PropTypes.string.isRequired,
   sliderState: PropTypes.bool,
-  locationState: PropTypes.string,
   toggleSlideMenu: PropTypes.func.isRequired,
+  routeRemote: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
-  locationState: state.locationState,
   sliderState: state.slideState,
 });
 

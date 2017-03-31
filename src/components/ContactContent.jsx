@@ -1,10 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { styles } from '../styles/contactContent.css'; // eslint-disable-line no-unused-vars
 
 class ContactContent extends Component {
+
+  static propTypes = {
+    activeLocation: PropTypes.string,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      ctCont: 'contact-content'
+    };
+  }
+
+  componentWillMount() {
+    const { activeLocation } = this.props;
+    activeLocation === '/contact' ?
+      this.setState({ ctCont: 'contact-content contact-content-active' }) :
+      this.setState({ ctCont: 'contact-content' });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { activeLocation } = nextProps;
+    activeLocation === 'contact' ?
+      this.setState({ ctCont: 'contact-content contact-content-active' }) :
+      this.setState({ ctCont: 'contact-content' });
+  }
+
+
   render() {
+    const { ctCont } = this.state;
+
     return (
-      <div className={`contact-content`}>
+      <div className={ctCont}>
         <div className="contact-wrap">
           <div className={`contact-section`}>
             <div className="section-text">

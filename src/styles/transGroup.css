@@ -1,28 +1,23 @@
 .example-enter {
   opacity: 0;
-  transform: scale(0.8) translateZ(0);
-  will-change: transform;
+  transform: translate3d(0, 10vh, 0);
 }
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transform: scale(1) translateZ(0);
-  transition: opacity 400ms, transform 400ms;
-  transition-timing-function: cubic-bezier(.83, .22, .47, .89);
+  transform: translate3d(0, 0, 0);
+  transition: transform 400ms, opacity 450ms;
+  transition-timing-function: ease-out;
   will-change: transform;
 }
 
 .example-leave {
   opacity: 1;
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 .example-leave.example-leave-active {
   opacity: 0;
-  transform: scale(0.8) translateZ(0);
-  transition: opacity 400ms, transform 400ms;
+  transform: translate3d(0, 10vh, 0);
+  transition: opacity 400ms, transform 450ms;
   transition-timing-function: cubic-bezier(.83, .22, .47, .89);
-  will-change: transform;
 }
-
