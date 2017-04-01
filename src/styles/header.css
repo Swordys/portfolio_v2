@@ -38,16 +38,15 @@
   border-bottom: 1px solid lightgray;
   box-sizing: border-box;
   position: relative;
-  transform: translate3d(-200px, 0, 0);
-  opacity: 0.01;
+  transform: scale(0.5);
+  opacity: 0;
   pointer-events: none;
 }
 
 .link-component-visable {
-  transform: translate3d(0, 0, 0);
-  transform-origin: top left;
+  transform: scale(1);
   pointer-events: all;
-  opacity: 0.99;
+  opacity: 1;
   transition: opacity 450ms, transform 450ms;
   transition-timing-function: cubic-bezier(.75, .28, .28, .84);
 }
@@ -76,6 +75,24 @@
   opacity: 0;
   transform: translate3d(-100px, 0, 0);
   pointer-events: none;
+}
+
+.link-component:first-child {
+  transition-delay: 0;
+  transform-origin: top left;
+}
+
+.link-component:nth-child(2) {
+  transition-delay: 50ms;
+  transform-origin: top left;
+}
+
+.link-component:nth-child(3) {
+  transition-delay: 100ms;
+}
+
+.link-component:last-child {
+  transition-delay: 150ms;
 }
 
 

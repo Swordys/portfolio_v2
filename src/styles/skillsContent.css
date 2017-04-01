@@ -13,7 +13,7 @@
   opacity: 0;
   transform: translate3d(0, -10vh, 0);
   transition: transform 400ms, opacity 450ms;
-  transition-timing-function: ease-out;
+  transition-timing-function: cubic-bezier(.75, .28, .28, .84);
   pointer-events: none;
 }
 
