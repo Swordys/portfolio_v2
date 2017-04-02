@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'ThickFont2';
+  src: url("webfonts/Coolvetica2.otf");
+}
+
 .main-wrap {
   display: flex;
   justify-content: flex-start;
@@ -5,10 +10,55 @@
   flex-flow: column-reverse nowrap;
   perspective: 1000px;
   overflow: hidden;
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 }
 
-.main-menu-wrap{
+.main-wrap-text {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrap-about {
+  padding: 5vh;
+}
+
+.main-wrap-about-name {
+  font-family: "ThickFont2";
+  font-size: 6vh;
+  margin-bottom: 5vh;
+  color: royalblue;
+  padding: 1.5vh 1.5vh 1.5vh 1.5vh;
+  background: white;
+}
+
+.main-wrap-about-text {
+  color: white;
+  font-family: "ThickFont2";
+  font-size: 9vh;
+}
+
+.main-wrap-about-status {
+  margin-top: 5vh;
+  color: white;
+  font-family: "ThickFont2";
+  font-size: 3vh;
+}
+
+.main-menu-wrap {
   display: flex;
   width: 100%;
   justify-content: flex-start;
+}
+
+@media (max-width: 1000px) {
+  .main-wrap-about-text {
+    font-size: 9vw;
+  }
+  .main-wrap-about-name {
+    font-size: 7vw;
+  }
 }

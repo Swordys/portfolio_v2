@@ -11,31 +11,38 @@ class AboutContent extends Component {
     super(props);
     this.state = {
       abCont: 'about-content',
-      abFrame: 'about-frame'
+      abFrame: 'about-frame',
+      abPic: 'about-picture'
     };
   }
 
   componentWillMount() {
     const { activeLocation } = this.props;
     activeLocation === '/about' ?
-      this.setState({ abCont: 'about-content about-content-active', abFrame: 'about-frame about-frame-active' }) :
-      this.setState({ abCont: 'about-content', abFrame: 'about-frame' });
+      this.setState({
+        abCont: 'about-content about-content-active',
+        abPic: 'about-picture about-picture-active'
+      }) :
+      this.setState({ abCont: 'about-content', abFrame: 'about-frame', abPic: 'about-picture' });
   }
 
   componentWillReceiveProps(nextProps) {
     const { activeLocation } = nextProps;
     activeLocation === 'about' ?
-      this.setState({ abCont: 'about-content about-content-active', abFrame: 'about-frame about-frame-active' }) :
-      this.setState({ abCont: 'about-content', abFrame: 'about-frame' });
+      this.setState({
+        abCont: 'about-content about-content-active',
+        abPic: 'about-picture about-picture-active'
+      }) :
+      this.setState({ abCont: 'about-content', abFrame: 'about-frame', abPic: 'about-picture' });
   }
 
   render() {
-    const { abCont, abFrame } = this.state;
+    const { abCont, abFrame, abPic } = this.state;
     return (
       <div className={abCont}>
         <div className="about-compo">
           <div className="pic-wrap">
-            <div className="about-picture">
+            <div className={abPic}>
               <div className={abFrame} />
             </div>
           </div>

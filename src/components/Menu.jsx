@@ -9,29 +9,31 @@ class Menu extends React.Component {
     super(props);
     this.state = {
       toggleMenu: '',
+      zMenu: '',
     };
   }
 
   componentWillMount() {
     const { activeLocation } = this.props;
-    activeLocation !== '/' && this.setState({ toggleMenu: 'toggleActive' });
+    activeLocation !== '/' && this.setState({ toggleMenu: 'toggleActive', zMenu: 'sideMenu-wrap-hidden' });
   }
 
   componentWillReceiveProps(nextProps) {
     const { activeLocation, sliderState } = nextProps;
-    activeLocation === '/' && !sliderState && this.setState({ toggleMenu: '' });
+    activeLocation === '/' && !sliderState && this.setState({ toggleMenu: '', zMenu: '' });
   }
 
   render() {
-    let { toggleMenu } = this.state;
+    let { toggleMenu, zMenu } = this.state;
     const { toggleSlide } = this.props;
     return (
       <div onClick={() => {
         toggleSlide(true);
         this.setState({
           toggleMenu: 'toggleActive',
+          zMenu: 'sideMenu-wrap-hidden',
         });
-      }} className="sideMenu-wrap" >
+      }} className={`sideMenu-wrap ${zMenu}`} >
         <div className="clicker">
           <div className={`bar-main ${toggleMenu}`} />
         </div>

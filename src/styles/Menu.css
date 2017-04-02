@@ -1,12 +1,15 @@
 .sideMenu-wrap {
-  height: 8vh;
-  width: 8vh;
+  height: 6vh;
+  width: 6vh;
   margin: 4vh;
   position: absolute;
   right: 0;
   top: 0;
   cursor: pointer;
-  z-index: 5;
+}
+
+.sideMenu-wrap-hidden {
+  z-index: -100;
 }
 
 .clicker {
@@ -18,47 +21,52 @@
 
 .bar-main {
   width: 100%;
-  height: 10px;
-  background: black;
+  height: 5px;
+  background: white;
   margin: auto;
   position: relative;
+  border-radius: 3px;
+  transition: transform 300ms ease-in-out;
 }
 
 .bar-main::after {
   content: "";
-  height: 10px;
+  height: 5px;
   width: 100%;
-  background: black;
+  background: white;
   position: absolute;
   transform-origin: center;
-  top: 3vh;
-  transition: all 350ms cubic-bezier(.67,.47,.09,.9);
+  border-radius: 3px;
+  top: 2vh;
+  transition: all 350ms cubic-bezier(.67, .47, .09, .9);
 }
 
 .bar-main::before {
   content: "";
-  height: 10px;
+  height: 5px;
+  border-radius: 3px;
   width: 100%;
-  background: black;
+  background: white;
   position: absolute;
-  top: -3vh;
-  transition: all 350ms cubic-bezier(.67,.47,.09,.9);
+  top: -2vh;
+  transition: all 350ms cubic-bezier(.67, .47, .09, .9);
 }
 
-.toggleActive{
+.toggleActive {
   background: transparent;
   z-index: -1;
   pointer-events: none;
+  transform: translateY(50px);
 }
 
 .toggleActive::after {
-  transform: translateY(-3vh) rotate(-45deg);
+  transform: translateY(-2vh) rotate(-45deg);
   opacity: 0;
   transform-origin: center;
 }
 
 .toggleActive::before {
-  transform: translateY(3vh) rotate(45deg);
+  transform: translateY(2vh) rotate(45deg);
   opacity: 0;
   transform-origin: center;
 }

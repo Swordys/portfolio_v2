@@ -10,31 +10,32 @@ class ProjectContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pjCont: 'project-content'
+      pjCont: 'project-content',
+      pjFile: 'project-file'
     };
   }
 
   componentWillMount() {
     const { activeLocation } = this.props;
     activeLocation === '/projects' ?
-      this.setState({ pjCont: 'project-content project-content-active' }) :
-      this.setState({ pjCont: 'project-content' });
+      this.setState({ pjCont: 'project-content project-content-active', pjFile: 'project-file project-file-active' }) :
+      this.setState({ pjCont: 'project-content', pjFile: 'project-file' });
   }
 
   componentWillReceiveProps(nextProps) {
     const { activeLocation } = nextProps;
     activeLocation === 'projects' ?
-      this.setState({ pjCont: 'project-content project-content-active' }) :
-      this.setState({ pjCont: 'project-content' });
+      this.setState({ pjCont: 'project-content project-content-active', pjFile: 'project-file project-file-active' }) :
+      this.setState({ pjCont: 'project-content', pjFile: 'project-file' });
   }
 
 
   render() {
-    const { pjCont } = this.state;
+    const { pjCont, pjFile } = this.state;
     return (
       <div className={pjCont}>
         <div className="project-container">
-          <div key="#1" className="project-file">
+          <div key="#1" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -55,7 +56,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#2" className={`project-file`}>
+          <div key="#2" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -76,7 +77,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#3" className={`project-file`}>
+          <div key="#3" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -97,7 +98,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#4" className={`project-file`}>
+          <div key="#4" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -118,7 +119,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#5" className={`project-file`}>
+          <div key="#5" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -139,7 +140,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#6" className={`project-file`}>
+          <div key="#6" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -160,7 +161,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#7" className={`project-file`}>
+          <div key="#7" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -181,7 +182,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#8" className={`project-file`}>
+          <div key="#8" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -202,7 +203,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#9" className={`project-file`}>
+          <div key="#9" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">
@@ -223,7 +224,7 @@ class ProjectContent extends Component {
               </div>
             </div>
           </div>
-          <div key="#10" className={`project-file`}>
+          <div key="#10" className={pjFile}>
             <div className="project-wrap">
               <div className="file-pic" />
               <div className="file-info">

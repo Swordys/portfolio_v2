@@ -22,6 +22,13 @@ class App extends Component {
     const { location } = this.props;
     return (
       <div className="main-wrap">
+        <div className="main-wrap-text">
+          <div className="main-wrap-about">
+            <h1 className="main-wrap-about-name">{"<"} davit saginashvili {"/>"}</h1>
+            <h1 className="main-wrap-about-text">css perfectionist,<br />react enthusiast, <br /> front-end developer.</h1>
+            <h2 className="main-wrap-about-status">+currently freelancing</h2>
+          </div>
+        </div>
         <div className="main-menu-wrap">
           <Header
             activeLocation={location.pathname}

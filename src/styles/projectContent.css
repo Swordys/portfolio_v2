@@ -1,5 +1,5 @@
 .project-content {
-  height: 87.5vh;
+  height: 87.6vh;
   width: 100%;
   position: absolute;
   font-family: 'ThickFont';
@@ -42,18 +42,18 @@
   border-radius: 2px;
   padding: 10px;
   position: relative;
-  transition: transform 400ms cubic-bezier(.72, .35, .46, .81);
+  transition: transform 400ms ease-out;
   will-change: transform;
   flex-shrink: 0;
   height: 300px;
   width: 300px;
   margin: 50px;
   margin-top: 50px;
+  transform: translate3d(0, 10vh, 0);
 }
 
-.projectActive {
+.project-file-active {
   transform: translate3d(0, 0, 0);
-  opacity: 0.99;
 }
 
 .project-wrap {
@@ -118,66 +118,77 @@
   background: url('./img/projScreens/messenger.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 200ms;
 }
 
 .project-file:nth-child(2) {
   background: url('./img/projScreens/movies.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 225ms;
 }
 
 .project-file:nth-child(3) {
   background: url('./img/projScreens/notemate.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 250ms;
 }
 
 .project-file:nth-child(4) {
   background: url('./img/projScreens/oldportf.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 275ms;
 }
 
 .project-file:nth-child(5) {
   background: url('./img/projScreens/weatherfast.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 300ms;
 }
 
 .project-file:nth-child(6) {
   background: url('./img/projScreens/radio.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 325ms;
 }
 
 .project-file:nth-child(7) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 350ms;
 }
 
 .project-file:nth-child(8) {
   background: url('./img/projScreens/calc.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 375ms;
 }
 
 .project-file:nth-child(9) {
   background: url('./img/projScreens/server.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 400ms;
 }
 
 .project-file:nth-child(10) {
   background: url('./img/projScreens/galaxsys6.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 425ms;
 }
 
 .project-file:nth-child(11) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;
+  transition-delay: 450ms;
 }
 
 @media (max-width: 1000px) {
