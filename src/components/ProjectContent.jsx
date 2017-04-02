@@ -30,7 +30,7 @@ class ProjectContent extends Component {
 
 
   render() {
-    const {pjCont} = this.state;
+    const { pjCont } = this.state;
     return (
       <div className={pjCont}>
         <div className="project-container">
@@ -39,8 +39,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  react messenger+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - redux - node - firebase - webpack - css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">messenger</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">messenger</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -49,8 +60,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  movie quotes+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - redux - node - moviedb api - express - webpack - css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">movies</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">movies</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -59,8 +81,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  note mate+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - redux - node - firebase - css3 - webpack - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">notes</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">notes</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -69,8 +102,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  old portfolio+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    javascript - css3 - html - photoshop</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">portfolio</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">portfolio</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -79,8 +123,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  react weather+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - node - openweathermap api - webpack - css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">weather</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">weather</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -89,8 +144,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  retro radio+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    javascript - css3 - gsap - photoshop - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">radio</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">radio</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -99,8 +165,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  react todo+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - redux - node - webpack - css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">todo</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">todo</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -109,8 +186,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  react calc+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    react - node - webpack - css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">calc</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">calc</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -119,8 +207,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  iso server+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    css3 - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">server</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">server</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -129,8 +228,19 @@ class ProjectContent extends Component {
               <div className="file-pic" />
               <div className="file-info">
                 <span className="info-text">
-                  project description
+                  galaxy phone+
               </span>
+                <div className="tech-text">
+                  <span style={{ color: "royalblue" }}>tech: <br /> <span style={{ color: "black", display: 'block', paddingTop: "5px" }}>
+                    css3 - gsap - javascript - html</span></span>
+                </div>
+                <div className="tech-links">
+                  <span style={{ display: "block" }}>github:
+                    <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="">galaxy</a>
+                  </span>
+                  <span >demo: <a style={{ paddingLeft: "10px", textDecoration: "none", color: "blue" }} href="#">galaxy</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
