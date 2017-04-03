@@ -20,20 +20,15 @@ class Menu extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { activeLocation, sliderState } = nextProps;
-    activeLocation === '/' && !sliderState && this.setState({ toggleMenu: '', zMenu: '' });
+    activeLocation === '/' && !sliderState ? this.setState({ toggleMenu: '', zMenu: '' }) :
+      this.setState({ toggleMenu: 'toggleActive', zMenu: 'sideMenu-wrap-hidden' });
   }
 
   render() {
     let { toggleMenu, zMenu } = this.state;
     const { toggleSlide } = this.props;
     return (
-      <div onClick={() => {
-        toggleSlide(true);
-        this.setState({
-          toggleMenu: 'toggleActive',
-          zMenu: 'sideMenu-wrap-hidden',
-        });
-      }} className={`sideMenu-wrap ${zMenu}`} >
+      <div onClick={() => toggleSlide(true)} className={`sideMenu-wrap ${zMenu}`} >
         <div className="clicker">
           <div className={`bar-main ${toggleMenu}`} />
         </div>

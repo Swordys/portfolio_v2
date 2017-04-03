@@ -25,10 +25,15 @@ class LandingPage extends Component {
       this.setState({ pageActive: 'main-wrap-text landing-active' });
   }
 
+
   render() {
     const { pageActive } = this.state;
+    const svgLink = "../styles/svg/logo-color.svg";
     return (
       <div className={pageActive}>
+        <div className={`logo-color`}>
+          <img src={svgLink} alt="logo" className="logo-main" />
+        </div>
         <div className="main-wrap-about">
           <h1 className="main-wrap-about-name">{"<"} davit saginashvili {"/>"}</h1>
           <h1 className="main-wrap-about-text">css perfectionist,<br />react enthusiast, <br /> front-end developer.</h1>

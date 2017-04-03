@@ -62,16 +62,6 @@
   position: relative;
 }
 
-.project-file:hover .file-pic {
-  transform: rotate3d(0, 1, 0, 25deg);
-  opacity: 0.01;
-}
-
-.project-file:hover .file-info {
-  transform: rotate3d(0, 1, 0, 0deg);
-  opacity: 1;
-}
-
 .file-pic {
   height: 100%;
   width: 100%;
@@ -100,6 +90,16 @@
   transition-timing-function: ease-out;
 }
 
+.project-file:hover .file-pic {
+  transform: rotate3d(0, 1, 0, 25deg);
+  opacity: 0;
+}
+
+.project-file:hover .file-info {
+  transform: rotate3d(0, 1, 0, 0deg);
+  opacity: 0.9;
+}
+
 .info-text {
   padding: 20px;
   color: royalblue;
@@ -114,77 +114,90 @@
   padding: 20px;
 }
 
-.project-file:first-child {
-  background: url('./img/projScreens/messenger.jpg');
+.project-file:first-child{
+  background: url('./img/projScreens/socket.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 200ms;
 }
 
 .project-file:nth-child(2) {
+  background: url('./img/projScreens/deck.jpg');
+  background-size: cover;
+  background-position: center center;
+  transition-delay: 225ms;
+}
+.project-file:nth-child(3) {
+  background: url('./img/projScreens/messenger.jpg');
+  background-size: cover;
+  background-position: center center;
+  transition-delay: 200ms;
+}
+
+.project-file:nth-child(4) {
   background: url('./img/projScreens/movies.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 225ms;
 }
 
-.project-file:nth-child(3) {
+.project-file:nth-child(5) {
   background: url('./img/projScreens/notemate.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 250ms;
 }
 
-.project-file:nth-child(4) {
+.project-file:nth-child(6) {
   background: url('./img/projScreens/oldportf.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 275ms;
 }
 
-.project-file:nth-child(5) {
+.project-file:nth-child(7) {
   background: url('./img/projScreens/weatherfast.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 300ms;
 }
 
-.project-file:nth-child(6) {
+.project-file:nth-child(8) {
   background: url('./img/projScreens/radio.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 325ms;
 }
 
-.project-file:nth-child(7) {
+.project-file:nth-child(9) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 350ms;
 }
 
-.project-file:nth-child(8) {
+.project-file:nth-child(10) {
   background: url('./img/projScreens/calc.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 375ms;
 }
 
-.project-file:nth-child(9) {
+.project-file:nth-child(11) {
   background: url('./img/projScreens/server.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 400ms;
 }
 
-.project-file:nth-child(10) {
+.project-file:nth-child(12) {
   background: url('./img/projScreens/galaxsys6.jpg');
   background-size: cover;
   background-position: center center;
   transition-delay: 425ms;
 }
 
-.project-file:nth-child(11) {
+.project-file:nth-child(13) {
   background: url('./img/projScreens/todoapp.jpg');
   background-size: cover;
   background-position: center center;

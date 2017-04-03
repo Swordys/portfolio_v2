@@ -8,6 +8,13 @@
   cursor: pointer;
 }
 
+.logo-color {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4vh;
+}
+
 .sideMenu-wrap-hidden {
   z-index: -100;
 }
@@ -26,7 +33,8 @@
   margin: auto;
   position: relative;
   border-radius: 3px;
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms, opacity 300ms;
+  transition-timing-function: ease-out;
 }
 
 .bar-main::after {
@@ -54,7 +62,6 @@
 
 .toggleActive {
   background: transparent;
-  z-index: -1;
   pointer-events: none;
   transform: translateY(50px);
 }
