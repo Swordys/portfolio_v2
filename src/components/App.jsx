@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { styles } from '../styles/mainWrap.css'; // eslint-disable-line no-unused-vars
 import { browserHistory } from 'react-router';
-import faviconOne from '../styles/img/faviconOne.ico';
-
 
 // components
 import Header from './Header.jsx';
