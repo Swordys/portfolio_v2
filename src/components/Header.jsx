@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { toggleSlideMenu } from '../actions/Actions.jsx';
+import svgImg from '../styles/svg/logo.svg';
 
 
 class Header extends React.Component {
@@ -145,7 +146,7 @@ class Header extends React.Component {
     let sliderClass = '';
     let activeLink = '';
     let activeLogo = '';
-    const svgLink = "../styles/svg/logo.svg";
+
     const { sliderState, routeRemote } = this.props;
     const {
       hideClassAbout,
@@ -187,7 +188,7 @@ class Header extends React.Component {
             >about
             </Link>
             <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
-              <img src={svgLink} alt="logo" className="logo-main" />
+              <img src={svgImg} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -208,7 +209,7 @@ class Header extends React.Component {
             >projects
             </Link>
             <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
-              <img src={svgLink} alt="logo" className="logo-main" />
+              <img src={svgImg} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -230,7 +231,7 @@ class Header extends React.Component {
             >skills
             </Link>
             <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
-              <img src={svgLink} alt="logo" className="logo-main" />
+              <img src={svgImg} alt="logo" className="logo-main" />
             </div>
           </div>
           <div
@@ -252,7 +253,7 @@ class Header extends React.Component {
             >contact
             </Link>
             <div onClick={this.handleBackToStart} className={`logo ${activeLogo}`}>
-              <img src={svgLink} alt="logo" className="logo-main" />
+              <img src={svgImg} alt="logo" className="logo-main" />
             </div>
           </div>
         </div>

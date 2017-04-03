@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import svgImg from '../styles/svg/logo-color.svg';
 
 class LandingPage extends Component {
 
@@ -28,11 +29,10 @@ class LandingPage extends Component {
 
   render() {
     const { pageActive } = this.state;
-    const svgLink = "../styles/svg/logo-color.svg";
     return (
       <div className={pageActive}>
         <div className={`logo-color`}>
-          <img src={svgLink} alt="logo" className="logo-main" />
+          <img src={svgImg} alt="logo" className="logo-main" />
         </div>
         <div className="main-wrap-about">
           <h1 className="main-wrap-about-name">{"<"} davit saginashvili {"/>"}</h1>
