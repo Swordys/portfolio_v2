@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import open from 'open';
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 const app = express();
 
 /* eslint-disable no-console*/
