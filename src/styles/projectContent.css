@@ -114,7 +114,7 @@
   padding: 20px;
 }
 
-.project-file:first-child{
+.project-file:first-child {
   background: url('./img/projScreens/socket.jpg');
   background-size: cover;
   background-position: center center;

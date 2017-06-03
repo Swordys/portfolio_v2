@@ -1,33 +1,31 @@
-import React, { Component, PropTypes } from 'react';
-import { styles } from '../styles/skillsContent.css'; // eslint-disable-line no-unused-vars
+import React, { Component, PropTypes } from "react";
+import { styles } from "../styles/skillsContent.css"; // eslint-disable-line no-unused-vars
 
 class SkillsContent extends Component {
-
   static propTypes = {
-    activeLocation: PropTypes.string,
-  }
+    activeLocation: PropTypes.string
+  };
 
   constructor(props) {
     super(props);
     this.state = {
-      skCont: 'skills-content'
+      skCont: "skills-content"
     };
   }
 
   componentWillMount() {
     const { activeLocation } = this.props;
-    activeLocation === '/skills' ?
-      this.setState({ skCont: 'skills-content skills-content-active' }) :
-      this.setState({ skCont: 'project-content' });
+    activeLocation === "/skills"
+      ? this.setState({ skCont: "skills-content skills-content-active" })
+      : this.setState({ skCont: "project-content" });
   }
 
   componentWillReceiveProps(nextProps) {
     const { activeLocation } = nextProps;
-    activeLocation === 'skills' ?
-      this.setState({ skCont: 'skills-content skills-content-active' }) :
-      this.setState({ skCont: 'skills-content' });
+    activeLocation === "skills"
+      ? this.setState({ skCont: "skills-content skills-content-active" })
+      : this.setState({ skCont: "skills-content" });
   }
-
 
   render() {
     const { skCont } = this.state;
@@ -71,6 +69,5 @@ class SkillsContent extends Component {
     );
   }
 }
-
 
 export default SkillsContent;

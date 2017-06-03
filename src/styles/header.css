@@ -95,7 +95,6 @@
   transition-delay: 75ms;
 }
 
-
 /*ABOUT - TAB*/
 
 .activeAbout {
@@ -103,7 +102,6 @@
   will-change: transform;
   transform-origin: top left;
 }
-
 
 /*PROJECTS - TAB*/
 
@@ -113,14 +111,12 @@
   transform-origin: top left;
 }
 
-
 /*SKILLS - TAB*/
 
 .activeSkills {
   transform: scale(0.5) translate3d(0, 50vh, 0);
   transform-origin: bottom left;
 }
-
 
 /*CONTACT - TAB*/
 
@@ -129,7 +125,6 @@
   will-change: transform;
   transform-origin: bottom left;
 }
-
 
 /*----------MENU - TEXT---------*/
 
@@ -146,7 +141,6 @@
   margin-left: 2vh;
 }
 
-
 .link-component:first-child a::after {
   content: "about";
   position: absolute;
@@ -158,7 +152,7 @@
   transition: opacity 250ms ease-out;
 }
 
-.link-component:first-child a:hover::after{
+.link-component:first-child a:hover::after {
   opacity: 1;
 }
 
@@ -173,10 +167,9 @@
   transition: opacity 250ms ease-out;
 }
 
-.link-component:nth-child(2) a:hover::after{
+.link-component:nth-child(2) a:hover::after {
   opacity: 1;
 }
-
 
 .link-component:nth-child(3) a::after {
   content: "skills";
@@ -189,7 +182,7 @@
   transition: opacity 250ms ease-out;
 }
 
-.link-component:nth-child(3) a:hover::after{
+.link-component:nth-child(3) a:hover::after {
   opacity: 1;
 }
 
@@ -204,7 +197,7 @@
   transition: opacity 250ms ease-out;
 }
 
-.link-component:last-child a:hover::after{
+.link-component:last-child a:hover::after {
   opacity: 1;
 }
 
@@ -301,13 +294,11 @@ a.linkTextActive {
   transition-delay: 100ms;
 }
 
-
 /*ABOUT*/
 
 a#about {
   transition-delay: 250ms;
 }
-
 
 /*PROJECTS*/
 
@@ -315,13 +306,11 @@ a#projects {
   transition-delay: 350ms;
 }
 
-
 /*SKILLS*/
 
 a#skills {
   transition-delay: 450ms;
 }
-
 
 /*CONTACT*/
 
