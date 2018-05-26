@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { Router, Route, browserHistory } from 'react-router';
+import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import App from './components/App.jsx';
-import About from './components/AboutContent.jsx';
-import Projects from './components/ProjectContent.jsx';
-import Skills from './components/SkillsContent.jsx';
-import Contact from './components/ContactContent.jsx';
-import { styles } from './styles/global.css'; // eslint-disable-line no-unused-vars
+import "./styles/global.css";
+import App from "./components/App.jsx";
+import About from "./components/AboutContent.jsx";
+import Projects from "./components/ProjectContent.jsx";
+import Skills from "./components/SkillsContent.jsx";
+import Contact from "./components/ContactContent.jsx";
 
 const store = configureStore();
 
@@ -23,5 +24,6 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById("root")
 );
+registerServiceWorker();

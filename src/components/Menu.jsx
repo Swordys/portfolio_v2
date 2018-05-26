@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React  from "react";
 import { toggleSlideMenu } from "../actions/Actions.jsx";
 import { connect } from "react-redux";
 import styles from "../styles/Menu.css"; // eslint-disable-line no-unused-vars
@@ -47,10 +47,10 @@ class Menu extends React.Component {
   }
 }
 
-Menu.propTypes = {
-  toggleSlide: PropTypes.func.isRequired,
-  activeLocation: PropTypes.string.isRequired
-};
+// Menu.propTypes = {
+//   toggleSlide: PropTypes.func.isRequired,
+//   activeLocation: PropTypes.string.isRequired
+// };
 
 const mapStateToProps = state => ({
   sliderState: state.slideState

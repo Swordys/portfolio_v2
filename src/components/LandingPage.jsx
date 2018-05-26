@@ -1,11 +1,8 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import svgImg from "../styles/svg/logo-color.svg";
 
 class LandingPage extends Component {
-  static propTypes = {
-    activeLocation: PropTypes.string
-  };
 
   constructor(props) {
     super(props);

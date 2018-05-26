@@ -1,5 +1,5 @@
-import { styles } from "../styles/header.css"; // eslint-disable-line no-unused-vars
-import React, { PropTypes } from "react";
+import "../styles/header.css"; // eslint-disable-line no-unused-vars
+import React from "react";
 import { Link } from "react-router";
 import { connect } from "react-redux";
 import { toggleSlideMenu } from "../actions/Actions.jsx";
@@ -85,7 +85,7 @@ class Header extends React.Component {
           hideClassAbout: "activeAbout",
           backArr: "back-showing-a"
         });
-        return;
+        break;
       case "projects":
         this.setState({
           hideClassContact: hideClass,
@@ -94,7 +94,7 @@ class Header extends React.Component {
           hideClassProjects: "activeProjects",
           backArr: "back-showing-b"
         });
-        return;
+        break;
       case "skills":
         this.setState({
           hideClassContact: hideClass,
@@ -104,7 +104,7 @@ class Header extends React.Component {
           linkWrap: "reverseFlex",
           backArr: "back-showing-c"
         });
-        return;
+        break;
       case "contact":
         this.setState({
           hideClassSkills: hideClass,
@@ -114,6 +114,8 @@ class Header extends React.Component {
           linkWrap: "reverseFlex",
           backArr: "back-showing-d"
         });
+        break;
+      default:
         return;
     }
   }
@@ -157,7 +159,7 @@ class Header extends React.Component {
       activeLink = "linkTextActive";
     }
 
-    backArr ? (activeLogo = "logoActive") : "";
+    if (backArr) activeLogo = "logoActive";
 
     return (
       <div className="header-wrap">
@@ -274,12 +276,12 @@ class Header extends React.Component {
   }
 }
 
-Header.propTypes = {
-  activeLocation: PropTypes.string.isRequired,
-  sliderState: PropTypes.bool,
-  toggleSlideMenu: PropTypes.func.isRequired,
-  routeRemote: PropTypes.object
-};
+// Header.propTypes = {
+//   activeLocation: PropTypes.string.isRequired,
+//   sliderState: PropTypes.bool,
+//   toggleSlideMenu: PropTypes.func.isRequired,
+//   routeRemote: PropTypes.object
+// };
 
 const mapStateToProps = state => ({
   sliderState: state.slideState

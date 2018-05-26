@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { styles } from "../styles/projectContent.css"; // eslint-disable-line no-unused-vars
 
 class ProjectContent extends Component {
-  static propTypes = {
-    activeLocation: PropTypes.string
-  };
+  // static propTypes = {
+  //   activeLocation: PropTypes.string
+  // };
 
   constructor(props) {
     super(props);

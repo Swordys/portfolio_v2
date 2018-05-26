@@ -1,10 +1,7 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { styles } from "../styles/aboutContent.css"; // eslint-disable-line no-unused-vars
 
 class AboutContent extends Component {
-  static propTypes = {
-    activeLocation: PropTypes.string
-  };
 
   constructor(props) {
     super(props);
@@ -72,14 +69,12 @@ class AboutContent extends Component {
                 <h2 className="hi">so ?</h2>
                 <p className="text-wrap">
                   I believe I have a solid foundation of the core concepts of
-                  web design and functionality.
-                  The earlier OOP experience helped me with clean code
-                  principles and optimal solution planning,
-                  but freedom of web environment gave me the inspiration to work
-                  on projects that people would enjoy.
+                  web design and functionality. The earlier OOP experience
+                  helped me with clean code principles and optimal solution
+                  planning, but freedom of web environment gave me the
+                  inspiration to work on projects that people would enjoy.
                 </p>
               </div>
-
             </div>
           </div>
         </div>

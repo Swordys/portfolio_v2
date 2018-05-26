@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { styles } from "../styles/mainWrap.css"; // eslint-disable-line no-unused-vars
 import { browserHistory } from "react-router";
 
@@ -12,11 +12,6 @@ import SkillsContent from "./SkillsContent.jsx";
 import ContactContent from "./ContactContent.jsx";
 
 class App extends Component {
-  static propTypes = {
-    children: PropTypes.object,
-    location: PropTypes.object
-  };
-
   render() {
     const { location } = this.props;
     return (

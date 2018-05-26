@@ -1,10 +1,7 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { styles } from "../styles/contactContent.css"; // eslint-disable-line no-unused-vars
 
 class ContactContent extends Component {
-  static propTypes = {
-    activeLocation: PropTypes.string
-  };
 
   constructor(props) {
     super(props);
